@@ -2,7 +2,6 @@
 
 namespace ApiMS.Core.Entities;
 
-[ExcludeFromCodeCoverage]
 public class BaseEntity
 {
     public Guid Id { get; set; }

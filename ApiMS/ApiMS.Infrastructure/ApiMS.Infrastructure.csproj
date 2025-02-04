@@ -46,9 +46,5 @@
   <ItemGroup>
     <ProjectReference Include="..\ApiMS.Core\ApiMS.Core.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
   
 </Project>
