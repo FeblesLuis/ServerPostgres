@@ -1,4 +1,4 @@
-@ApiMS_HostAddress = http://localhost:5174
+@ApiMS_HostAddress = http://localhost:5084
 
 GET {{ApiMS_HostAddress}}/weatherforecast/
 Accept: application/json

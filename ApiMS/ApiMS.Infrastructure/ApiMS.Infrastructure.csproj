@@ -1,25 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Repository\**" />
-    <Compile Remove="ServiceBus\**" />
-    <EmbeddedResource Remove="Repository\**" />
-    <EmbeddedResource Remove="ServiceBus\**" />
-    <None Remove="Repository\**" />
-    <None Remove="ServiceBus\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="DependencyInjection.cs" />
-    <Compile Remove="Settings\AzureServiceBusSettings.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MassTransit" Version="8.3.6" />
@@ -46,5 +31,5 @@
   <ItemGroup>
     <ProjectReference Include="..\ApiMS.Core\ApiMS.Core.csproj" />
   </ItemGroup>
-  
+
 </Project>

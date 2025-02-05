@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "ZlwKVNnrCb1AtTxt6K5alkl0ILvYxeiwnxV2D1yr5jI=",
+  "Source": "ApiMS",
+  "BasePath": "_content/ApiMS",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

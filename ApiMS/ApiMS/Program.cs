@@ -1,6 +1,16 @@
+using ApiMS.Infrastructure.Database;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// crear variable para la cadena de conexion
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//registrar servicio para la conexion
+builder.Services.AddDbContext<ApiDbContext>(
+    options => options.UseNpgsql(connectionString)
+    );
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
