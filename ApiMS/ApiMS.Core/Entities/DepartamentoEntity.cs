@@ -8,8 +8,11 @@ namespace ApiMS.Core.Entities
 {
     public class DepartamentoEntity : BaseEntity
     {
-        public string? nombre { get; set; }
-        public string? apellido { get; set; }
+        public string? nombre { get; set; }         //Nombre del departamento
+        public string? cargo { get; set; }          //Cargo en el departamento
 
+        //Relacion FK 
+            //1..1 Usuarios
+            public UsuarioEntity usuario { get; set; } = null!;
     }
 }

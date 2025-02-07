@@ -1,18 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\",
+  "WorkspaceRootPath": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 1\\apims\\apims.core\\entities\\accionescorrectivasentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|solutionrelative:apims.core\\entities\\accionescorrectivasentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\documents\\programacion\\serverpostgres\\apims\\apims.application\\handlers\\queries\\buscarusuariosnombrehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\queries\\buscarusuariosnombrehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 1\\apims\\apims\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|solutionrelative:apims\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|c:\\users\\lfebles\\documents\\programacion\\serverpostgres\\apims\\apims\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|solutionrelative:apims\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{515A93A6-E931-4D23-9F4D-6856B8B5CB65}|ApiMS.Infrastructure\\ApiMS.Infrastructure.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 1\\apims\\apims.infrastructure\\database\\apidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{515A93A6-E931-4D23-9F4D-6856B8B5CB65}|ApiMS.Infrastructure\\ApiMS.Infrastructure.csproj|solutionrelative:apims.infrastructure\\database\\apidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\documents\\programacion\\serverpostgres\\apims\\apims.application\\queries\\buscarusuariosnombrequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\queries\\buscarusuariosnombrequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\documents\\programacion\\serverpostgres\\apims\\apims.application\\requests\\buscarusuariosnombrerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\requests\\buscarusuariosnombrerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\documents\\programacion\\serverpostgres\\apims\\apims.application\\responses\\buscarusuariosnombreresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\responses\\buscarusuariosnombreresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|c:\\users\\lfebles\\documents\\programacion\\serverpostgres\\apims\\apims.core\\entities\\usuarioentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|solutionrelative:apims.core\\entities\\usuarioentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|c:\\users\\lfebles\\documents\\programacion\\serverpostgres\\apims\\apims.core\\entities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|solutionrelative:apims.core\\entities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +38,101 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS\\appsettings.json",
-              "RelativeDocumentMoniker": "ApiMS\\appsettings.json",
-              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS\\appsettings.json",
-              "RelativeToolTip": "ApiMS\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-07T01:47:13.355Z",
+              "DocumentIndex": 0,
+              "Title": "BuscarUsuariosNombreHandler.cs",
+              "DocumentMoniker": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Application\\Handlers\\Queries\\BuscarUsuariosNombreHandler.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Queries\\BuscarUsuariosNombreHandler.cs",
+              "ToolTip": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Application\\Handlers\\Queries\\BuscarUsuariosNombreHandler.cs",
+              "RelativeToolTip": "ApiMS.Application\\Handlers\\Queries\\BuscarUsuariosNombreHandler.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAADIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T18:08:15.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsuarioEntity.cs",
+              "DocumentMoniker": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Core\\Entities\\UsuarioEntity.cs",
+              "RelativeDocumentMoniker": "ApiMS.Core\\Entities\\UsuarioEntity.cs",
+              "ToolTip": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Core\\Entities\\UsuarioEntity.cs",
+              "RelativeToolTip": "ApiMS.Core\\Entities\\UsuarioEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T17:37:13.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BuscarUsuariosNombreResponse.cs",
+              "DocumentMoniker": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Application\\Responses\\BuscarUsuariosNombreResponse.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Responses\\BuscarUsuariosNombreResponse.cs",
+              "ToolTip": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Application\\Responses\\BuscarUsuariosNombreResponse.cs",
+              "RelativeToolTip": "ApiMS.Application\\Responses\\BuscarUsuariosNombreResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T17:36:55.935Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ApiDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
-              "RelativeDocumentMoniker": "ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
-              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
-              "RelativeToolTip": "ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "BuscarUsuariosNombreQuery.cs",
+              "DocumentMoniker": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Application\\Queries\\BuscarUsuariosNombreQuery.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Queries\\BuscarUsuariosNombreQuery.cs",
+              "ToolTip": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Application\\Queries\\BuscarUsuariosNombreQuery.cs",
+              "RelativeToolTip": "ApiMS.Application\\Queries\\BuscarUsuariosNombreQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T01:47:08.826Z",
+              "WhenOpened": "2025-02-07T17:35:08.045Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccionesCorrectivasEntity.cs",
-              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Core\\Entities\\AccionesCorrectivasEntity.cs",
-              "RelativeDocumentMoniker": "ApiMS.Core\\Entities\\AccionesCorrectivasEntity.cs",
-              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Core\\Entities\\AccionesCorrectivasEntity.cs",
-              "RelativeToolTip": "ApiMS.Core\\Entities\\AccionesCorrectivasEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "BuscarUsuariosNombreRequest.cs",
+              "DocumentMoniker": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Application\\Requests\\BuscarUsuariosNombreRequest.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Requests\\BuscarUsuariosNombreRequest.cs",
+              "ToolTip": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Application\\Requests\\BuscarUsuariosNombreRequest.cs",
+              "RelativeToolTip": "ApiMS.Application\\Requests\\BuscarUsuariosNombreRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T01:46:59.769Z",
+              "WhenOpened": "2025-02-07T17:28:26.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Core\\Entities\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "ApiMS.Core\\Entities\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Core\\Entities\\BaseEntity.cs",
+              "RelativeToolTip": "ApiMS.Core\\Entities\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T15:41:29.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "ApiMS\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "ApiMS\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAQwCUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T15:41:08.493Z",
               "EditorCaption": ""
             }
           ]

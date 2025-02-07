@@ -13,10 +13,15 @@ namespace ApiMS.Core.Entities
         public string? responsable { get; set; }         // Responsable
         public string? fecha_verificacion { get; set; }  // Fecha de verificación
 
-        //Relaciones
-        public VerificacionEfectividadEntity verificacionEfectividad = new VerificacionEfectividadEntity();
-        public IndicadoresEntity indicadores = new IndicadoresEntity();
-        public ICollection<SeguimientoEntity> seguimiento;
+        //Relaciones PK
+            // 1..1 Verificacion de efectividad
+            public VerificacionEfectividadEntity verificacionEfectividad = new VerificacionEfectividadEntity();
+            // 1..1 Indicadores
+            public IndicadoresEntity indicadores = new IndicadoresEntity();
+
+        //Relacion FK 
+            //1..1 NoConfomidad
+            public NoConformidadEntity noConformidad { get; set; } = null!;
     }
 
 }

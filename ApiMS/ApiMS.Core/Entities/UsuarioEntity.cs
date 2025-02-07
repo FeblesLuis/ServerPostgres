@@ -16,14 +16,12 @@ public class UsuarioEntity : BaseEntity
     public string? respuesta_de_seguridad2 { set; get; }
     public bool? estado { set; get; }
 
-    // Relaciones 
-    public DepartamentoEntity departamento = new DepartamentoEntity();
-
-    public ICollection<ReporteEntity> reporte;
-
-
-    // Relacion Usuario Acciones correctivas 1..n 
-
-    public AccionesCorrectivasEntity accionesCorrectivas;
+    // Relaciones PK
+        // 1..1 departamento
+        public DepartamentoEntity departamento = new DepartamentoEntity();
+        // 1..n Reporte
+        public ICollection<ReporteEntity>? reporte;
+        // 1..n AccionesCorrectivas 
+        public ICollection<RevisionAccionesCorrectivasEntity>? revicionAccionesCorrectivas;
 
 }

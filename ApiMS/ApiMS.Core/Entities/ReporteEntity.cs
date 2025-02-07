@@ -12,10 +12,15 @@ namespace ApiMS.Core.Entities
         public string? area { get; set; }                // Área relacionada con el reporte
         public string? titulo { get; set; }              // Título del reporte
         public string? descripcion { get; set; }         // Descripción detallada del reporte
-        public string? consecuencias { get; set; }       // Consecuencias del reporte
 
-        //Relaciones
-        public RevisionEntity revision;
+        //Relacion PK 1..1 con Revision 
+            public RevisionReporteEntity revision =new RevisionReporteEntity();
+
+        //Relaciones FK
+            // 1..n con Usuarios 
+                public UsuarioEntity usuario { get; set; } = null!;
+            // 1..1 con NoConformidad
+                public NoConformidadEntity noConformidad { get; set; } = null!;
 
     }
 

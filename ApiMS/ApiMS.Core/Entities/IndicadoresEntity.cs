@@ -10,6 +10,10 @@ namespace ApiMS.Core.Entities
     {
         public string? origen { get; set; }   // Origen
         public string? causa { get; set; }    // Causa
+
+        //Relacion FK 
+            //1..1 Cierre
+            public CierreEntity cierre { get; set; } = null!;
     }
 
 }

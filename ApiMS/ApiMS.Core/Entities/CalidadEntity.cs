@@ -4,7 +4,8 @@ namespace ApiMS.Core.Entities;
 
 public class CalidadEntity : UsuarioEntity
 {
-    //    //Relaciones
-    public ICollection<NoConformidadEntity> noConformidad;
+    //Relaciones PK
 
+        //1..* NoConformidad
+        public ICollection<NoConformidadEntity> noConformidad { get; set; } = null!;
 }

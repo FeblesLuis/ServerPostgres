@@ -13,9 +13,13 @@ namespace ApiMS.Core.Entities
         public string? correccion { get; set; }       // Corrección
         public string? analisis_riesgo { get; set; }  // Análisis de riesgo
        
-        //Relaciones
+        //Relaciones PK
+            //Acciones Correctivas
+            public ICollection<AccionCorrectivaEntity> accionesCorrectivas = null!;
 
-        public List<AccionesCorrectivasEntity> accionesCorrectivas;
+        //Relacion FK 
+            //1..* No Conformidad
+            public NoConformidadEntity noConformidad { get; set; } = null!;
     }
 
 }

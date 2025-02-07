@@ -12,6 +12,10 @@ namespace ApiMS.Core.Entities
         public string? estatus { get; set; }            // Estatus
         public string? observaciones { get; set; }      // Observaciones
         public string? realizado_por { get; set; }      // Realizado por
+
+        //Relacion FK 
+            //1..1 NoConformidad
+            public NoConformidadEntity noConformidad { get; set; } = null!;
     }
 
 }

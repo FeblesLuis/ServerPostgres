@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj": {}
+    "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj": {
+    "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj",
+        "projectUniqueName": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj",
         "projectName": "ApiMS.Core",
-        "projectPath": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj",
-        "packagesPath": "C:\\Users\\luisf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Core\\obj\\",
+        "projectPath": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj",
+        "packagesPath": "C:\\Users\\lfebles\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lfebles\\Documents\\Programacion\\serverPostgres\\ApiMS\\ApiMS.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\luisf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lfebles\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

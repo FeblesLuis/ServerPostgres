@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiMS.Core.Entities;
 using ApiMS.Infrastructure.Database;
+using ApiMS.Application.Requests;
+using ApiMS.Application.Queries;
 
 namespace ApiMS.Controllers
 {
@@ -19,6 +21,35 @@ namespace ApiMS.Controllers
         public UsuarioController(ApiDbContext context)
         {
             _context = context;
+        }
+
+
+
+        [HttpGet("buscarUsusario")]
+        public async Task<IActionResult> BuscarUsuarios([FromBody] BuscarUsuariosNombreRequest request)
+        {
+            // Validar que al menos un parámetro tenga valor
+            if (string.IsNullOrWhiteSpace(request.nombre) && string.IsNullOrWhiteSpace(request.apellido))
+            {
+                return BadRequest("Debe proporcionar al menos un nombre o apellido para la búsqueda");
+            }
+
+            // Construir consulta dinámica
+            var query = new BuscarUsuariosNombreQuery(request);
+
+            if (!string.IsNullOrWhiteSpace(nombre))
+            {
+                query = query.Where(u => u.Nombre.Contains(nombre.Trim()));
+            }
+
+            if (!string.IsNullOrWhiteSpace(apellido))
+            {
+                query = query.Where(u => u.Apellido.Contains(apellido.Trim()));
+            }
+
+            var resultados = await query.ToListAsync();
+
+            return Ok(resultados);
         }
 
         // GET: api/Usuario

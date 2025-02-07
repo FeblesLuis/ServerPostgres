@@ -11,6 +11,10 @@ namespace ApiMS.Core.Entities
         public bool? efectiva { get; set; }          // Efectiva
         public string? observaciones { get; set; }   // Observaciones
         public string? realizado_por { get; set; }   // Realizado por
+
+        //Relacion FK 
+            //1..1 Cierre
+            public CierreEntity cierre { get; set; } = null!;
     }
 
 }
