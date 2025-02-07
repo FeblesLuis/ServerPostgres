@@ -1,22 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Pruebas\\2\\ApiMS\\",
+  "WorkspaceRootPath": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\pruebas\\2\\apims\\apims\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|solutionrelative:apims\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 1\\apims\\apims.core\\entities\\accionescorrectivasentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|solutionrelative:apims.core\\entities\\accionescorrectivasentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{515A93A6-E931-4D23-9F4D-6856B8B5CB65}|ApiMS.Infrastructure\\ApiMS.Infrastructure.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\pruebas\\2\\apims\\apims.infrastructure\\database\\apidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{515A93A6-E931-4D23-9F4D-6856B8B5CB65}|ApiMS.Infrastructure\\ApiMS.Infrastructure.csproj|solutionrelative:apims.infrastructure\\database\\apidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\pruebas\\2\\apims\\apims\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 1\\apims\\apims\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|solutionrelative:apims\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\pruebas\\2\\apims\\apims\\apims.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|solutionrelative:apims\\apims.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{515A93A6-E931-4D23-9F4D-6856B8B5CB65}|ApiMS.Infrastructure\\ApiMS.Infrastructure.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 1\\apims\\apims.infrastructure\\database\\apidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{515A93A6-E931-4D23-9F4D-6856B8B5CB65}|ApiMS.Infrastructure\\ApiMS.Infrastructure.csproj|solutionrelative:apims.infrastructure\\database\\apidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ApiDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Pruebas\\2\\ApiMS\\ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
-              "RelativeDocumentMoniker": "ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
-              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Pruebas\\2\\ApiMS\\ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
-              "RelativeToolTip": "ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T16:57:40.759Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS\\appsettings.json",
+              "RelativeDocumentMoniker": "ApiMS\\appsettings.json",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS\\appsettings.json",
+              "RelativeToolTip": "ApiMS\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-07T01:47:13.355Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Pruebas\\2\\ApiMS\\ApiMS\\appsettings.json",
-              "RelativeDocumentMoniker": "ApiMS\\appsettings.json",
-              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Pruebas\\2\\ApiMS\\ApiMS\\appsettings.json",
-              "RelativeToolTip": "ApiMS\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-05T16:47:41.981Z",
+              "Title": "ApiDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
+              "RelativeDocumentMoniker": "ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
+              "RelativeToolTip": "ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T01:47:08.826Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Pruebas\\2\\ApiMS\\ApiMS\\Program.cs",
-              "RelativeDocumentMoniker": "ApiMS\\Program.cs",
-              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Pruebas\\2\\ApiMS\\ApiMS\\Program.cs",
-              "RelativeToolTip": "ApiMS\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAGAAAAAAAAAA==",
+              "Title": "AccionesCorrectivasEntity.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Core\\Entities\\AccionesCorrectivasEntity.cs",
+              "RelativeDocumentMoniker": "ApiMS.Core\\Entities\\AccionesCorrectivasEntity.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 1\\ApiMS\\ApiMS.Core\\Entities\\AccionesCorrectivasEntity.cs",
+              "RelativeToolTip": "ApiMS.Core\\Entities\\AccionesCorrectivasEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T16:47:06.911Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApiMS",
-              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Pruebas\\2\\ApiMS\\ApiMS\\ApiMS.csproj",
-              "RelativeDocumentMoniker": "ApiMS\\ApiMS.csproj",
-              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Pruebas\\2\\ApiMS\\ApiMS\\ApiMS.csproj",
-              "RelativeToolTip": "ApiMS\\ApiMS.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-05T16:45:27.706Z",
+              "WhenOpened": "2025-02-07T01:46:59.769Z",
               "EditorCaption": ""
             }
           ]

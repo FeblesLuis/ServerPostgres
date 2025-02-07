@@ -32,4 +32,8 @@
     <ProjectReference Include="..\ApiMS.Core\ApiMS.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>
