@@ -52,3 +52,21 @@ C:\Users\lfebles\Documents\Programacion\serverPostgres\ApiMS\ApiMS.Application\o
 C:\Users\lfebles\Documents\Programacion\serverPostgres\ApiMS\ApiMS.Application\obj\Debug\net8.0\refint\ApiMS.Application.dll
 C:\Users\lfebles\Documents\Programacion\serverPostgres\ApiMS\ApiMS.Application\obj\Debug\net8.0\ApiMS.Application.pdb
 C:\Users\lfebles\Documents\Programacion\serverPostgres\ApiMS\ApiMS.Application\obj\Debug\net8.0\ref\ApiMS.Application.dll
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\bin\Debug\net8.0\ApiMS.Application.deps.json
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\bin\Debug\net8.0\ApiMS.Application.dll
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\bin\Debug\net8.0\ApiMS.Application.pdb
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\bin\Debug\net8.0\ApiMS.Core.dll
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\bin\Debug\net8.0\ApiMS.Infrastructure.dll
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\bin\Debug\net8.0\ApiMS.Core.pdb
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\bin\Debug\net8.0\ApiMS.Infrastructure.pdb
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\obj\Debug\net8.0\ApiMS.Application.csproj.AssemblyReference.cache
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\obj\Debug\net8.0\ApiMS.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\obj\Debug\net8.0\ApiMS.Application.AssemblyInfoInputs.cache
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\obj\Debug\net8.0\ApiMS.Application.AssemblyInfo.cs
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\obj\Debug\net8.0\ApiMS.Application.csproj.CoreCompileInputs.cache
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\obj\Debug\net8.0\ApiMS.Application.sourcelink.json
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\obj\Debug\net8.0\ApiMS.Ap.3142DC58.Up2Date
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\obj\Debug\net8.0\ApiMS.Application.dll
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\obj\Debug\net8.0\refint\ApiMS.Application.dll
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\obj\Debug\net8.0\ApiMS.Application.pdb
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Application\obj\Debug\net8.0\ref\ApiMS.Application.dll

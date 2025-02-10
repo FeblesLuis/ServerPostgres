@@ -12,6 +12,10 @@ builder.Services.AddDbContext<ApiDbContext>(
     options => options.UseNpgsql(connectionString)
     );
 
+// Registrar MediatR
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ApiMS.Application.Queries.BuscarUsuariosNombreQuery).Assembly));
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

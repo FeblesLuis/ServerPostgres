@@ -20,7 +20,7 @@ public class BuscarUsuariosNombreHandler : IRequestHandler<BuscarUsuariosNombreQ
         _logger = logger;
     }
 
-    public Task<List<BuscarUsuariosNombreRequest>> Handle(BuscarUsuariosNombreQuery request, CancellationToken cancellationToken)
+    public Task<List<BuscarUsuariosNombreResponse>> Handle(BuscarUsuariosNombreQuery request, CancellationToken cancellationToken)
     {
         try
         {
@@ -42,7 +42,7 @@ public class BuscarUsuariosNombreHandler : IRequestHandler<BuscarUsuariosNombreQ
         }
     }
 
-    private async Task<List<BuscarUsuariosNombreRequest>> HandleAsync(BuscarUsuariosNombreQuery request)
+    private async Task<List<BuscarUsuariosNombreResponse>> HandleAsync(BuscarUsuariosNombreQuery request)
     {
 
         try
