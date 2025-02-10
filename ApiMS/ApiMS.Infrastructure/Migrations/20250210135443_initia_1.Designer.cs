@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ApiMS.Infrastructure.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20250207153218_initial")]
-    partial class initial
+    [Migration("20250210135443_initia_1")]
+    partial class initia_1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,7 +60,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasIndex("responsableId");
 
-                    b.ToTable("AccionesCorrectivasEntity");
+                    b.ToTable("AccionesCorrectivas");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.CierreEntity", b =>
@@ -100,7 +100,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasIndex("noConformidadId");
 
-                    b.ToTable("CierreEntity");
+                    b.ToTable("Cierre");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.DepartamentoEntity", b =>
@@ -134,7 +134,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasIndex("usuarioId");
 
-                    b.ToTable("DepartamentoEntity");
+                    b.ToTable("Departamento");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.IndicadoresEntity", b =>
@@ -168,7 +168,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasIndex("cierreId");
 
-                    b.ToTable("InicadoresEntity");
+                    b.ToTable("Inicadores");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.NoConformidadEntity", b =>
@@ -220,7 +220,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasIndex("calidadId");
 
-                    b.ToTable("NoConformidadEntity");
+                    b.ToTable("NoConformidad");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.NotificacionEntity", b =>
@@ -258,7 +258,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("NotificacionEntity");
+                    b.ToTable("Notificacion");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.ReporteEntity", b =>
@@ -303,7 +303,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasIndex("usuarioId");
 
-                    b.ToTable("ReporteEntity");
+                    b.ToTable("Reporte");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.ResponsableEntity", b =>
@@ -343,7 +343,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasIndex("noConformidadId");
 
-                    b.ToTable("ResponsableEntity");
+                    b.ToTable("Responsable");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.RevisionAccionesCorrectivasEntity", b =>
@@ -376,7 +376,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasIndex("usuarioId");
 
-                    b.ToTable("RevisionAccionesCorrectivasEntity");
+                    b.ToTable("RevisionAccionesCorrectivas");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.RevisionReporteEntity", b =>
@@ -410,7 +410,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasIndex("reporteId");
 
-                    b.ToTable("RevisionReporteEntity");
+                    b.ToTable("RevisionReporte");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.SeguimientoEntity", b =>
@@ -508,7 +508,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UsuarioEntity");
+                    b.ToTable("Usuario");
 
                     b.HasDiscriminator().HasValue("UsuarioEntity");
 
@@ -549,7 +549,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasIndex("cierreId");
 
-                    b.ToTable("VerificacionEfectividadEntity");
+                    b.ToTable("VerificacionEfectividad");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.AdministradorEntity", b =>

@@ -1,3 +1,4 @@
+using ApiMS.Application.Queries.Usuarios;
 using ApiMS.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +14,8 @@ builder.Services.AddDbContext<ApiDbContext>(
     );
 
 // Registrar MediatR
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ApiMS.Application.Queries.BuscarUsuariosNombreQuery).Assembly));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(BuscarUsuariosNombreQuery).Assembly));
+
 
 
 builder.Services.AddControllers();

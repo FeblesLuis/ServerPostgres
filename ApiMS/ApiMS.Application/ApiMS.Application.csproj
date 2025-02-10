@@ -18,9 +18,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="Commands\" />
     <Folder Include="Excepciones\" />
-    <Folder Include="Handlers\Commands\" />
     <Folder Include="Mappers\" />
   </ItemGroup>
 

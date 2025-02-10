@@ -7,13 +7,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ApiMS.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class initia_1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "NotificacionEntity",
+                name: "Notificacion",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -29,11 +29,11 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_NotificacionEntity", x => x.Id);
+                    table.PrimaryKey("PK_Notificacion", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UsuarioEntity",
+                name: "Usuario",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -55,11 +55,11 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UsuarioEntity", x => x.Id);
+                    table.PrimaryKey("PK_Usuario", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "DepartamentoEntity",
+                name: "Departamento",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -73,17 +73,17 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DepartamentoEntity", x => x.Id);
+                    table.PrimaryKey("PK_Departamento", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DepartamentoEntity_UsuarioEntity_usuarioId",
+                        name: "FK_Departamento_Usuario_usuarioId",
                         column: x => x.usuarioId,
-                        principalTable: "UsuarioEntity",
+                        principalTable: "Usuario",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "NoConformidadEntity",
+                name: "NoConformidad",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -103,17 +103,17 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_NoConformidadEntity", x => x.Id);
+                    table.PrimaryKey("PK_NoConformidad", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_NoConformidadEntity_UsuarioEntity_calidadId",
+                        name: "FK_NoConformidad_Usuario_calidadId",
                         column: x => x.calidadId,
-                        principalTable: "UsuarioEntity",
+                        principalTable: "Usuario",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "CierreEntity",
+                name: "Cierre",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -129,17 +129,17 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CierreEntity", x => x.Id);
+                    table.PrimaryKey("PK_Cierre", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CierreEntity_NoConformidadEntity_noConformidadId",
+                        name: "FK_Cierre_NoConformidad_noConformidadId",
                         column: x => x.noConformidadId,
-                        principalTable: "NoConformidadEntity",
+                        principalTable: "NoConformidad",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ReporteEntity",
+                name: "Reporte",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -156,23 +156,23 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReporteEntity", x => x.Id);
+                    table.PrimaryKey("PK_Reporte", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ReporteEntity_NoConformidadEntity_noConformidadId",
+                        name: "FK_Reporte_NoConformidad_noConformidadId",
                         column: x => x.noConformidadId,
-                        principalTable: "NoConformidadEntity",
+                        principalTable: "NoConformidad",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ReporteEntity_UsuarioEntity_usuarioId",
+                        name: "FK_Reporte_Usuario_usuarioId",
                         column: x => x.usuarioId,
-                        principalTable: "UsuarioEntity",
+                        principalTable: "Usuario",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ResponsableEntity",
+                name: "Responsable",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -188,11 +188,11 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ResponsableEntity", x => x.Id);
+                    table.PrimaryKey("PK_Responsable", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ResponsableEntity_NoConformidadEntity_noConformidadId",
+                        name: "FK_Responsable_NoConformidad_noConformidadId",
                         column: x => x.noConformidadId,
-                        principalTable: "NoConformidadEntity",
+                        principalTable: "NoConformidad",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -216,15 +216,15 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Seguimiento", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Seguimiento_NoConformidadEntity_noConformidadId",
+                        name: "FK_Seguimiento_NoConformidad_noConformidadId",
                         column: x => x.noConformidadId,
-                        principalTable: "NoConformidadEntity",
+                        principalTable: "NoConformidad",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "InicadoresEntity",
+                name: "Inicadores",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -238,17 +238,17 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_InicadoresEntity", x => x.Id);
+                    table.PrimaryKey("PK_Inicadores", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_InicadoresEntity_CierreEntity_cierreId",
+                        name: "FK_Inicadores_Cierre_cierreId",
                         column: x => x.cierreId,
-                        principalTable: "CierreEntity",
+                        principalTable: "Cierre",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "VerificacionEfectividadEntity",
+                name: "VerificacionEfectividad",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -263,17 +263,17 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_VerificacionEfectividadEntity", x => x.Id);
+                    table.PrimaryKey("PK_VerificacionEfectividad", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_VerificacionEfectividadEntity_CierreEntity_cierreId",
+                        name: "FK_VerificacionEfectividad_Cierre_cierreId",
                         column: x => x.cierreId,
-                        principalTable: "CierreEntity",
+                        principalTable: "Cierre",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "RevisionReporteEntity",
+                name: "RevisionReporte",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -287,17 +287,17 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RevisionReporteEntity", x => x.Id);
+                    table.PrimaryKey("PK_RevisionReporte", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_RevisionReporteEntity_ReporteEntity_reporteId",
+                        name: "FK_RevisionReporte_Reporte_reporteId",
                         column: x => x.reporteId,
-                        principalTable: "ReporteEntity",
+                        principalTable: "Reporte",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "AccionesCorrectivasEntity",
+                name: "AccionesCorrectivas",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -312,17 +312,17 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AccionesCorrectivasEntity", x => x.Id);
+                    table.PrimaryKey("PK_AccionesCorrectivas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AccionesCorrectivasEntity_ResponsableEntity_responsableId",
+                        name: "FK_AccionesCorrectivas_Responsable_responsableId",
                         column: x => x.responsableId,
-                        principalTable: "ResponsableEntity",
+                        principalTable: "Responsable",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "RevisionAccionesCorrectivasEntity",
+                name: "RevisionAccionesCorrectivas",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -335,74 +335,74 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RevisionAccionesCorrectivasEntity", x => x.Id);
+                    table.PrimaryKey("PK_RevisionAccionesCorrectivas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_RevisionAccionesCorrectivasEntity_AccionesCorrectivasEntity~",
+                        name: "FK_RevisionAccionesCorrectivas_AccionesCorrectivas_accionesCor~",
                         column: x => x.accionesCorrectivasId,
-                        principalTable: "AccionesCorrectivasEntity",
+                        principalTable: "AccionesCorrectivas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_RevisionAccionesCorrectivasEntity_UsuarioEntity_usuarioId",
+                        name: "FK_RevisionAccionesCorrectivas_Usuario_usuarioId",
                         column: x => x.usuarioId,
-                        principalTable: "UsuarioEntity",
+                        principalTable: "Usuario",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AccionesCorrectivasEntity_responsableId",
-                table: "AccionesCorrectivasEntity",
+                name: "IX_AccionesCorrectivas_responsableId",
+                table: "AccionesCorrectivas",
                 column: "responsableId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CierreEntity_noConformidadId",
-                table: "CierreEntity",
+                name: "IX_Cierre_noConformidadId",
+                table: "Cierre",
                 column: "noConformidadId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DepartamentoEntity_usuarioId",
-                table: "DepartamentoEntity",
+                name: "IX_Departamento_usuarioId",
+                table: "Departamento",
                 column: "usuarioId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_InicadoresEntity_cierreId",
-                table: "InicadoresEntity",
+                name: "IX_Inicadores_cierreId",
+                table: "Inicadores",
                 column: "cierreId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_NoConformidadEntity_calidadId",
-                table: "NoConformidadEntity",
+                name: "IX_NoConformidad_calidadId",
+                table: "NoConformidad",
                 column: "calidadId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReporteEntity_noConformidadId",
-                table: "ReporteEntity",
+                name: "IX_Reporte_noConformidadId",
+                table: "Reporte",
                 column: "noConformidadId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReporteEntity_usuarioId",
-                table: "ReporteEntity",
+                name: "IX_Reporte_usuarioId",
+                table: "Reporte",
                 column: "usuarioId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ResponsableEntity_noConformidadId",
-                table: "ResponsableEntity",
+                name: "IX_Responsable_noConformidadId",
+                table: "Responsable",
                 column: "noConformidadId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RevisionAccionesCorrectivasEntity_accionesCorrectivasId",
-                table: "RevisionAccionesCorrectivasEntity",
+                name: "IX_RevisionAccionesCorrectivas_accionesCorrectivasId",
+                table: "RevisionAccionesCorrectivas",
                 column: "accionesCorrectivasId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RevisionAccionesCorrectivasEntity_usuarioId",
-                table: "RevisionAccionesCorrectivasEntity",
+                name: "IX_RevisionAccionesCorrectivas_usuarioId",
+                table: "RevisionAccionesCorrectivas",
                 column: "usuarioId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RevisionReporteEntity_reporteId",
-                table: "RevisionReporteEntity",
+                name: "IX_RevisionReporte_reporteId",
+                table: "RevisionReporte",
                 column: "reporteId");
 
             migrationBuilder.CreateIndex(
@@ -411,8 +411,8 @@ namespace ApiMS.Infrastructure.Migrations
                 column: "noConformidadId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_VerificacionEfectividadEntity_cierreId",
-                table: "VerificacionEfectividadEntity",
+                name: "IX_VerificacionEfectividad_cierreId",
+                table: "VerificacionEfectividad",
                 column: "cierreId");
         }
 
@@ -420,43 +420,43 @@ namespace ApiMS.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "DepartamentoEntity");
+                name: "Departamento");
 
             migrationBuilder.DropTable(
-                name: "InicadoresEntity");
+                name: "Inicadores");
 
             migrationBuilder.DropTable(
-                name: "NotificacionEntity");
+                name: "Notificacion");
 
             migrationBuilder.DropTable(
-                name: "RevisionAccionesCorrectivasEntity");
+                name: "RevisionAccionesCorrectivas");
 
             migrationBuilder.DropTable(
-                name: "RevisionReporteEntity");
+                name: "RevisionReporte");
 
             migrationBuilder.DropTable(
                 name: "Seguimiento");
 
             migrationBuilder.DropTable(
-                name: "VerificacionEfectividadEntity");
+                name: "VerificacionEfectividad");
 
             migrationBuilder.DropTable(
-                name: "AccionesCorrectivasEntity");
+                name: "AccionesCorrectivas");
 
             migrationBuilder.DropTable(
-                name: "ReporteEntity");
+                name: "Reporte");
 
             migrationBuilder.DropTable(
-                name: "CierreEntity");
+                name: "Cierre");
 
             migrationBuilder.DropTable(
-                name: "ResponsableEntity");
+                name: "Responsable");
 
             migrationBuilder.DropTable(
-                name: "NoConformidadEntity");
+                name: "NoConformidad");
 
             migrationBuilder.DropTable(
-                name: "UsuarioEntity");
+                name: "Usuario");
         }
     }
 }

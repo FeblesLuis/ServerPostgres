@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiMS.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7523420f0bf2b49d8c43355ac8aac288661385a7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b494cd0eda8263b09890599de97b4bf504192503")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiMS.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiMS.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,26 +5,26 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Usuario/BuscarUsuariosNombre": {
-      "post": {
+    "/api/CRUD_Buscar_Usuario/BuscarUsuario_Nombre": {
+      "get": {
         "tags": [
-          "Usuario"
+          "CRUD_Buscar_Usuario"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BuscarUsuariosNombreRequest"
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/BuscarUsuariosNombreRequest"
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/BuscarUsuariosNombreRequest"
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
               }
             }
           }
@@ -37,7 +37,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuariosNombreResponse"
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
                   }
                 }
               },
@@ -45,7 +45,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuariosNombreResponse"
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
                   }
                 }
               },
@@ -53,7 +53,292 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuariosNombreResponse"
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CRUD_Buscar_Usuario/BuscarUsuario_Apellido": {
+      "post": {
+        "tags": [
+          "CRUD_Buscar_Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CRUD_Buscar_Usuario/BuscarUsuario_Usuario": {
+      "post": {
+        "tags": [
+          "CRUD_Buscar_Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CRUD_Buscar_Usuario/BuscarUsuario_Correo": {
+      "post": {
+        "tags": [
+          "CRUD_Buscar_Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CRUD_Buscar_Usuario/BuscarUsuario_ID": {
+      "post": {
+        "tags": [
+          "CRUD_Buscar_Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioIDRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioIDRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioIDRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CRUD_Buscar_Usuario/BuscarUsuario_Departamento": {
+      "post": {
+        "tags": [
+          "CRUD_Buscar_Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuscarUsuarioRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
                   }
                 }
               }
@@ -65,23 +350,53 @@
   },
   "components": {
     "schemas": {
-      "BuscarUsuariosNombreRequest": {
+      "BuscarDepartamentoResponse": {
         "type": "object",
         "properties": {
-          "nombre": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "nombreDepartamento": {
             "type": "string",
             "nullable": true
           },
-          "apellido": {
+          "cargo": {
             "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "BuscarUsuariosNombreResponse": {
+      "BuscarUsuarioIDRequest": {
         "type": "object",
         "properties": {
+          "data": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BuscarUsuarioRequest": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BuscarUsuarioResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
           "usuario": {
             "type": "string",
             "nullable": true
@@ -122,17 +437,12 @@
             "type": "boolean",
             "nullable": true
           },
-          "departamento": {
-            "type": "string",
-            "nullable": true
-          },
-          "cargo": {
-            "type": "string",
-            "nullable": true
-          },
           "discriminator": {
             "type": "string",
             "nullable": true
+          },
+          "departamento": {
+            "$ref": "#/components/schemas/BuscarDepartamentoResponse"
           }
         },
         "additionalProperties": false

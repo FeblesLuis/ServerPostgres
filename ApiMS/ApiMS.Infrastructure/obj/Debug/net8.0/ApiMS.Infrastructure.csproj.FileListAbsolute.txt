@@ -74,3 +74,22 @@ C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Infrastructure\
 C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ApiMS.Infrastructure.pdb
 C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ApiMS.Infrastructure.genruntimeconfig.cache
 C:\Users\luisf\OneDrive\Documents\github\Iteracion 2\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ref\ApiMS.Infrastructure.dll
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\bin\Debug\net8.0\ApiMS.Infrastructure.deps.json
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\bin\Debug\net8.0\ApiMS.Infrastructure.runtimeconfig.json
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\bin\Debug\net8.0\ApiMS.Infrastructure.dll
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\bin\Debug\net8.0\ApiMS.Infrastructure.pdb
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\bin\Debug\net8.0\ApiMS.Core.dll
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\bin\Debug\net8.0\ApiMS.Core.pdb
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ApiMS.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ApiMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ApiMS.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ApiMS.Infrastructure.AssemblyInfo.cs
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ApiMS.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\EFCoreNpgsqlNetTopologySuite.cs
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ApiMS.Infrastructure.sourcelink.json
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ApiMS.In.6F7ED9E7.Up2Date
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ApiMS.Infrastructure.dll
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\refint\ApiMS.Infrastructure.dll
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ApiMS.Infrastructure.pdb
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ApiMS.Infrastructure.genruntimeconfig.cache
+C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Infrastructure\obj\Debug\net8.0\ref\ApiMS.Infrastructure.dll

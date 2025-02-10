@@ -1,21 +1,151 @@
 [
   {
-    "ContainingType": "ApiMS.Controllers.UsuarioController",
-    "Method": "BuscarUsuariosNombre",
-    "RelativePath": "api/Usuario/BuscarUsuariosNombre",
+    "ContainingType": "ApiMS.Controllers.CRUD_Buscar_UsuarioController",
+    "Method": "BuscarUsuario_Apellido",
+    "RelativePath": "api/CRUD_Buscar_Usuario/BuscarUsuario_Apellido",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "request",
-        "Type": "ApiMS.Application.Requests.BuscarUsuariosNombreRequest",
+        "Type": "ApiMS.Application.Requests.BuscarUsuarioRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[ApiMS.Application.Responses.BuscarUsuariosNombreResponse, ApiMS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[ApiMS.Application.Responses.BuscarUsuarioResponse, ApiMS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiMS.Controllers.CRUD_Buscar_UsuarioController",
+    "Method": "BuscarUsuario_Correo",
+    "RelativePath": "api/CRUD_Buscar_Usuario/BuscarUsuario_Correo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiMS.Application.Requests.BuscarUsuarioRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ApiMS.Application.Responses.BuscarUsuarioResponse, ApiMS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiMS.Controllers.CRUD_Buscar_UsuarioController",
+    "Method": "BuscarUsuario_Departamento",
+    "RelativePath": "api/CRUD_Buscar_Usuario/BuscarUsuario_Departamento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiMS.Application.Requests.BuscarUsuarioRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ApiMS.Application.Responses.BuscarUsuarioResponse, ApiMS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiMS.Controllers.CRUD_Buscar_UsuarioController",
+    "Method": "BuscarUsuario_ID",
+    "RelativePath": "api/CRUD_Buscar_Usuario/BuscarUsuario_ID",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiMS.Application.Requests.BuscarUsuarioIDRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ApiMS.Application.Responses.BuscarUsuarioResponse, ApiMS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiMS.Controllers.CRUD_Buscar_UsuarioController",
+    "Method": "BuscarUsuario_Nombre",
+    "RelativePath": "api/CRUD_Buscar_Usuario/BuscarUsuario_Nombre",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiMS.Application.Requests.BuscarUsuarioRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ApiMS.Application.Responses.BuscarUsuarioResponse, ApiMS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiMS.Controllers.CRUD_Buscar_UsuarioController",
+    "Method": "BuscarUsuario_Usuario",
+    "RelativePath": "api/CRUD_Buscar_Usuario/BuscarUsuario_Usuario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiMS.Application.Requests.BuscarUsuarioRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ApiMS.Application.Responses.BuscarUsuarioResponse, ApiMS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
