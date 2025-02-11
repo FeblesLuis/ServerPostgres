@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\Itera1\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj": {}
+    "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\Itera1\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj": {
+    "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\Itera1\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj",
+        "projectUniqueName": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj",
         "projectName": "ApiMS.Core",
-        "projectPath": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\Itera1\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj",
-        "packagesPath": "C:\\Users\\lfebles\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\Itera1\\ApiMS\\ApiMS.Core\\obj\\",
+        "projectPath": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Core\\ApiMS.Core.csproj",
+        "packagesPath": "C:\\Users\\luisf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lfebles\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\luisf\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

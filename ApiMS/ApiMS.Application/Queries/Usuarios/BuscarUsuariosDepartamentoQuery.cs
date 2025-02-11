@@ -5,7 +5,7 @@ using MediatR;
 
 namespace ApiMS.Application.Queries.Usuarios
 {
-    public class BuscarUsuariosDepartamentoQuery : IRequest<List<BuscarUsuarioResponse>>
+    public class BuscarUsuariosDepartamentoQuery : IRequest<List<UsuarioResponse>>
     {
         public BuscarUsuarioRequest _request { get; set; }
         public BuscarUsuariosDepartamentoQuery(BuscarUsuarioRequest request)

@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ApiMS.Application.Handlers.Queries.Usuarios
 {
-    public class BuscarUsuariosDepartamentoHandler : IRequestHandler<BuscarUsuariosDepartamentoQuery, List<BuscarUsuarioResponse>>
+    public class BuscarUsuariosDepartamentoHandler : IRequestHandler<BuscarUsuariosDepartamentoQuery, List<UsuarioResponse>>
     {
         private readonly ApiDbContext _dbContext;
         private readonly ILogger<BuscarUsuariosDepartamentoHandler> _logger;
@@ -18,7 +18,7 @@ namespace ApiMS.Application.Handlers.Queries.Usuarios
             _logger = logger;
         }
 
-        public Task<List<BuscarUsuarioResponse>> Handle(BuscarUsuariosDepartamentoQuery request, CancellationToken cancellationToken)
+        public Task<List<UsuarioResponse>> Handle(BuscarUsuariosDepartamentoQuery request, CancellationToken cancellationToken)
         {
             try
             {
@@ -40,49 +40,57 @@ namespace ApiMS.Application.Handlers.Queries.Usuarios
             }
         }
 
-        private async Task<List<BuscarUsuarioResponse>> HandleAsync(BuscarUsuariosDepartamentoQuery request)
+        private async Task<List<UsuarioResponse>> HandleAsync(BuscarUsuariosDepartamentoQuery request)
         {
 
             try
             {
-                //Traigo al departmento
-                var departamentoObj = _dbContext.Departamento
-                 .Where(d => d.nombre == request._request.data) // Usar el ID del departamento
-                 .Select(d => new BuscarDepartamentoResponse
-                 {
-                     id = d.usuario.Id,
-                     nombreDepartamento = d.nombre,
-                     cargo = d.cargo
-                 });
-
-                // Obtener los IDs de los usuarios relacionados con los departamentos
-                var usuarioIds = departamentoObj.Select(d => d.id).ToList();
-
-                // Traer los usuarios relacionados con los IDs obtenidos
-                var usuario = _dbContext.Usuario
-                    .Where(c => usuarioIds.Contains(c.Id)) // Filtra por los IDs de los usuarios
-                    .Select(c => new BuscarUsuarioResponse() // Mapea la respuesta del usuario
-                    {
-                        id = c.Id,
-                        usuario = c.usuario,
-                        nombre = c.nombre,
-                        apellido = c.apellido,
-                        password = c.password,
-                        correo = c.correo,
-                        discriminator = EF.Property<string>(c, "Discriminator"),
-                        respuesta_de_seguridad = c.respuesta_de_seguridad,
-                        respuesta_de_seguridad2 = c.respuesta_de_seguridad2,
-                        preguntas_de_seguridad = c.preguntas_de_seguridad,
-                        preguntas_de_seguridad2 = c.preguntas_de_seguridad2,
-                        estado = c.estado,
-                        departamento = new BuscarDepartamentoResponse
+                // Obtener el departamento y su usuario asociado
+                var departamentoConUsuario = _dbContext.Departamento
+                    .Where(d => d.nombre == request._request.data) // Filtra por el nombre del departamento
+                    .Select(d =>  new UsuarioResponse // Proyecta el usuario asociado
                         {
-                            nombreDepartamento = departamentoObj.FirstOrDefault().nombreDepartamento,
-                            cargo = departamentoObj.FirstOrDefault().cargo
-                        }
-                    }); // Convertir a lista para obtener todos los usuarios
+                            id = d.usuario.Id,
+                            CreatedAt = d.usuario.CreatedAt,
+                            CreatedBy = d.usuario.CreatedBy,
+                            UpdatedAt = d.usuario.UpdatedAt,
+                            UpdatedBy = d.usuario.UpdatedBy,
 
-                return await usuario.ToListAsync();
+                            usuario = d.usuario.usuario,
+                            nombre = d.usuario.nombre,
+                            apellido = d.usuario.apellido,
+                            password = d.usuario.password,
+                            correo = d.usuario.correo,
+                            discriminator = EF.Property<string>(d.usuario, "Discriminator"),
+                            respuesta_de_seguridad = d.usuario.respuesta_de_seguridad,
+                            respuesta_de_seguridad2 = d.usuario.respuesta_de_seguridad2,
+                            preguntas_de_seguridad = d.usuario.preguntas_de_seguridad,
+                            preguntas_de_seguridad2 = d.usuario.preguntas_de_seguridad2,
+                            estado = d.usuario.estado,
+                            departamento = new BuscarDepartamentoResponse // Asigna el departamento correspondiente
+                            {
+                                id = d.Id,
+                                CreatedAt = d.CreatedAt,
+                                CreatedBy = d.CreatedBy,
+                                UpdatedAt = d.UpdatedAt,
+                                UpdatedBy = d.UpdatedBy,
+
+                                nombreDepartamento = d.nombre,
+                                cargo = d.cargo
+                            }
+
+                    })
+                    .ToList(); // Obtiene el primer departamento que coincida (o null si no hay coincidencias)
+
+
+                if (departamentoConUsuario == null)
+                {
+                    // Manejar el caso en que no se encuentre el departamento
+                    throw new ArgumentNullException(nameof(request));
+                }
+
+
+                return departamentoConUsuario;
             }
             catch (Exception ex)
             {

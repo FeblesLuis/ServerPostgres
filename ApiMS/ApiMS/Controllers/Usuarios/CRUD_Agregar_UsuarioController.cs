@@ -1,35 +1,38 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ApiMS.Application.Requests;
 using ApiMS.Application.Queries;
-using ApiMS.Application.Responses;
 using MediatR;
 using ApiMS.Base;
-
+using ApiMS.Application.Responses.Usuarios;
+using ApiMS.Application.Requests.Usuarios;
+using ApiMS.Application.Commands.Usuario;
 
 namespace ApiMS.Controllers.Usuarios
 {
-    public class CRUD_Agregar_UsuarioControler : BaseController<CRUD_Agregar_UsuarioControler>
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CRUD_Agregar_UsuarioController : BaseController<CRUD_Agregar_UsuarioController>
     {
 
         private readonly IMediator _mediator;
 
-        public CRUD_Agregar_UsuarioControler(IMediator mediator, ILogger<CRUD_Agregar_UsuarioControler> logger) : base(logger)
+        public CRUD_Agregar_UsuarioController(IMediator mediator, ILogger<CRUD_Agregar_UsuarioController> logger) : base(logger)
         {
             _mediator = mediator;
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        [HttpPost("AgregarUsuario_Operario")]
+        [HttpPost("Agregar_Usuario")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-        public async Task<ActionResult<Guid>> AgregarUsuario_Operario([FromBody] RegistrarPrestadorRequest request)
+        public async Task<ActionResult<IdUsuarioResponse>> AgregarUsuario([FromBody] UsuarioRequest request)
         {
             _logger.LogInformation("Entrando al método que registra los valores de prueba");
             try
             {
-                var command = new AgregarRegistrarPrestadorCommand(request);
+                var command = new AgregarUsuarioCommand(request);
                 var response = await _mediator.Send(command);
                 return Response200(NewResponseOperation(), response);
             }

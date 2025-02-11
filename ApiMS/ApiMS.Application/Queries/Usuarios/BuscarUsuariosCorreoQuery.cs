@@ -4,7 +4,7 @@ using ApiMS.Application.Responses.Usuarios;
 
 namespace ApiMS.Application.Queries.Usuarios
 {
-    public class BuscarUsuariosCorreoQuery : IRequest<List<BuscarUsuarioResponse>>
+    public class BuscarUsuariosCorreoQuery : IRequest<List<UsuarioResponse>>
     {
         public BuscarUsuarioRequest _request { get; set; }
         public BuscarUsuariosCorreoQuery(BuscarUsuarioRequest request)

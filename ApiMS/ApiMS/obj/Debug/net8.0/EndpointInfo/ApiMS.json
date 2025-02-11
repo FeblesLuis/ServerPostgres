@@ -5,7 +5,143 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/CRUD_Buscar_Usuario/BuscarUsuario_Nombre": {
+    "/api/CRUD_Actualizar_Usuario/Actualizar_Usuario": {
+      "put": {
+        "tags": [
+          "CRUD_Actualizar_Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuarioRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuarioRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuarioRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdUsuarioResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdUsuarioResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdUsuarioResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CRUD_Agregar_Usuario/Agregar_Usuario": {
+      "post": {
+        "tags": [
+          "CRUD_Agregar_Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuarioRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuarioRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuarioRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdUsuarioResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdUsuarioResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdUsuarioResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CRUD_Buscar_Usuario/BuscarUsuario": {
       "get": {
         "tags": [
           "CRUD_Buscar_Usuario"
@@ -37,7 +173,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
                 }
               },
@@ -45,7 +181,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
                 }
               },
@@ -53,65 +189,28 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "/api/CRUD_Buscar_Usuario/BuscarUsuario_Apellido": {
-      "post": {
-        "tags": [
-          "CRUD_Buscar_Usuario"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BuscarUsuarioRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BuscarUsuarioRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/BuscarUsuarioRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
+          },
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
-                  }
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
-                  }
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
-                  }
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -120,7 +219,7 @@
       }
     },
     "/api/CRUD_Buscar_Usuario/BuscarUsuario_Usuario": {
-      "post": {
+      "get": {
         "tags": [
           "CRUD_Buscar_Usuario"
         ],
@@ -151,7 +250,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
                 }
               },
@@ -159,7 +258,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
                 }
               },
@@ -167,8 +266,28 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -177,7 +296,7 @@
       }
     },
     "/api/CRUD_Buscar_Usuario/BuscarUsuario_Correo": {
-      "post": {
+      "get": {
         "tags": [
           "CRUD_Buscar_Usuario"
         ],
@@ -208,7 +327,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
                 }
               },
@@ -216,7 +335,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
                 }
               },
@@ -224,8 +343,28 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -234,7 +373,7 @@
       }
     },
     "/api/CRUD_Buscar_Usuario/BuscarUsuario_ID": {
-      "post": {
+      "get": {
         "tags": [
           "CRUD_Buscar_Usuario"
         ],
@@ -265,7 +404,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
                 }
               },
@@ -273,7 +412,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
                 }
               },
@@ -281,8 +420,28 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -291,7 +450,7 @@
       }
     },
     "/api/CRUD_Buscar_Usuario/BuscarUsuario_Departamento": {
-      "post": {
+      "get": {
         "tags": [
           "CRUD_Buscar_Usuario"
         ],
@@ -322,7 +481,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
                 }
               },
@@ -330,7 +489,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
                 }
               },
@@ -338,8 +497,28 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/BuscarUsuarioResponse"
+                    "$ref": "#/components/schemas/UsuarioResponse"
                   }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -354,6 +533,29 @@
         "type": "object",
         "properties": {
           "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuarioId": {
             "type": "string",
             "format": "uuid",
             "nullable": true
@@ -389,12 +591,154 @@
         },
         "additionalProperties": false
       },
-      "BuscarUsuarioResponse": {
+      "IdUsuarioResponse": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
             "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "UsuarioRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "primer_nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "segundo_nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "primer_apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "segundo_apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "preguntas_de_seguridad": {
+            "type": "string",
+            "nullable": true
+          },
+          "preguntas_de_seguridad2": {
+            "type": "string",
+            "nullable": true
+          },
+          "respuesta_de_seguridad": {
+            "type": "string",
+            "nullable": true
+          },
+          "respuesta_de_seguridad2": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "nombreDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "cargoDepartamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UsuarioResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
             "nullable": true
           },
           "usuario": {

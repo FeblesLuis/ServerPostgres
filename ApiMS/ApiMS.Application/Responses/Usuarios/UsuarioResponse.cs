@@ -1,15 +1,15 @@
-﻿using ApiMS.Application.Responses.Usuarios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ApiMS.Application.Requests.Usuarios
+﻿namespace ApiMS.Application.Responses.Usuarios
 {
-    public class AgregarUsuarioRequest
+    public class UsuarioResponse
     {
         public Guid? id { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public string? CreatedBy { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public string? UpdatedBy { get; set; }
+
+
+
         public string? usuario { get; set; }
         public string? nombre { get; set; }
         public string? apellido { get; set; }
@@ -21,7 +21,8 @@ namespace ApiMS.Application.Requests.Usuarios
         public string? respuesta_de_seguridad2 { set; get; }
         public bool? estado { set; get; }
         public string? discriminator { set; get; }
-        public string? nombreDepartamento { get; set; }
-        public string? cargo { get; set; }
+        // Nueva propiedad para almacenar información del departamento
+        public BuscarDepartamentoResponse? departamento { get; set; }
     }
+
 }

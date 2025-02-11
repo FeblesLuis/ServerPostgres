@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\Itera1\\ApiMS\\",
+  "WorkspaceRootPath": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\itera1\\apims\\apims.application\\handlers\\commands\\usuarios\\agregaroperariohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\commands\\usuarios\\agregaroperariohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|solutionrelative:apims\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\itera1\\apims\\apims.application\\requests\\usuarios\\agregarusuariorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\requests\\usuarios\\agregarusuariorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims\\controllers\\usuarios\\crud_buscar_usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|solutionrelative:apims\\controllers\\usuarios\\crud_buscar_usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\itera1\\apims\\apims.application\\handlers\\queries\\usuarios\\buscarusuarioidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\queries\\usuarios\\buscarusuarioidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.application\\handlers\\queries\\usuarios\\buscarusuarioshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\queries\\usuarios\\buscarusuarioshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,49 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AgregarUsuarioRequest.cs",
-              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\Itera1\\ApiMS\\ApiMS.Application\\Requests\\Usuarios\\AgregarUsuarioRequest.cs",
-              "RelativeDocumentMoniker": "ApiMS.Application\\Requests\\Usuarios\\AgregarUsuarioRequest.cs",
-              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\Itera1\\ApiMS\\ApiMS.Application\\Requests\\Usuarios\\AgregarUsuarioRequest.cs",
-              "RelativeToolTip": "ApiMS.Application\\Requests\\Usuarios\\AgregarUsuarioRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T20:27:03.97Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AgregarOperarioHandler.cs",
-              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\Itera1\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Usuarios\\AgregarOperarioHandler.cs",
-              "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Commands\\Usuarios\\AgregarOperarioHandler.cs",
-              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\Itera1\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Usuarios\\AgregarOperarioHandler.cs",
-              "RelativeToolTip": "ApiMS.Application\\Handlers\\Commands\\Usuarios\\AgregarOperarioHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS\\Program.cs",
+              "RelativeDocumentMoniker": "ApiMS\\Program.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS\\Program.cs",
+              "RelativeToolTip": "ApiMS\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T20:26:32.571Z",
+              "WhenOpened": "2025-02-11T19:06:45.67Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "BuscarUsuarioIdHandler.cs",
-              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\Itera1\\ApiMS\\ApiMS.Application\\Handlers\\Queries\\Usuarios\\BuscarUsuarioIdHandler.cs",
-              "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Queries\\Usuarios\\BuscarUsuarioIdHandler.cs",
-              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\Itera1\\ApiMS\\ApiMS.Application\\Handlers\\Queries\\Usuarios\\BuscarUsuarioIdHandler.cs",
-              "RelativeToolTip": "ApiMS.Application\\Handlers\\Queries\\Usuarios\\BuscarUsuarioIdHandler.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Title": "BuscarUsuariosHandler.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Queries\\Usuarios\\BuscarUsuariosHandler.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Queries\\Usuarios\\BuscarUsuariosHandler.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Queries\\Usuarios\\BuscarUsuariosHandler.cs",
+              "RelativeToolTip": "ApiMS.Application\\Handlers\\Queries\\Usuarios\\BuscarUsuariosHandler.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAgwFcAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T20:26:24.735Z",
+              "WhenOpened": "2025-02-11T19:16:03.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CRUD_Buscar_UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS\\Controllers\\Usuarios\\CRUD_Buscar_UsuarioController.cs",
+              "RelativeDocumentMoniker": "ApiMS\\Controllers\\Usuarios\\CRUD_Buscar_UsuarioController.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS\\Controllers\\Usuarios\\CRUD_Buscar_UsuarioController.cs",
+              "RelativeToolTip": "ApiMS\\Controllers\\Usuarios\\CRUD_Buscar_UsuarioController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwB8AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T19:15:53.235Z",
               "EditorCaption": ""
             }
           ]

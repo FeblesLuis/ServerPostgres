@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ApiMS.Application.Requests;
-using ApiMS.Application.Queries;
 using MediatR;
 using ApiMS.Base;
 using ApiMS.Application.Responses.Usuarios;
+using ApiMS.Application.Queries.Usuarios;
 
 namespace ApiMS.Controllers
 {
@@ -20,36 +20,16 @@ namespace ApiMS.Controllers
         }
 
 
-        [HttpGet("BuscarUsuario_Nombre")]
+        [HttpGet("BuscarUsuario")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<List<BuscarUsuarioResponse>>> BuscarUsuario_Nombre([FromBody] BuscarUsuarioRequest request)
+        public async Task<ActionResult<List<UsuarioResponse>>> BuscarUsuario([FromBody] BuscarUsuarioRequest request)
         {
             _logger.LogInformation("Entrando al método que consulta los Usuario");
 
             try
             {
-                var query = new BuscarUsuariosNombreQuery(request);
-                var response = await _mediator.Send(query);
-                return Response200(NewResponseOperation(), response);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("Ocurrio un error al intentar registrar un valor de prueba. Exception: " + ex);
-                return Response400(NewResponseOperation(), ex.Message,
-                    "Ocurrio un error al intentar registrar un valor de prueba", ex.InnerException?.ToString());
-            }
-        }
-        [HttpGet("BuscarUsuario_Apellido")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<List<BuscarUsuarioResponse>>> BuscarUsuario_Apellido([FromBody] BuscarUsuarioRequest request)
-        {
-            _logger.LogInformation("Entrando al método que consulta los Usuario");
-
-            try
-            {
-                var query = new BuscarUsuariosApellidoQuery(request);
+                var query = new BuscarUsuariosQuery(request);
                 var response = await _mediator.Send(query);
                 return Response200(NewResponseOperation(), response);
             }
@@ -64,7 +44,7 @@ namespace ApiMS.Controllers
         [HttpGet("BuscarUsuario_Usuario")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<List<BuscarUsuarioResponse>>> BuscarUsuario_Usuario([FromBody] BuscarUsuarioRequest request)
+        public async Task<ActionResult<List<UsuarioResponse>>> BuscarUsuario_Usuario([FromBody] BuscarUsuarioRequest request)
         {
             _logger.LogInformation("Entrando al método que consulta los Usuario");
 
@@ -85,7 +65,7 @@ namespace ApiMS.Controllers
         [HttpGet("BuscarUsuario_Correo")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<List<BuscarUsuarioResponse>>> BuscarUsuario_Correo([FromBody] BuscarUsuarioRequest request)
+        public async Task<ActionResult<List<UsuarioResponse>>> BuscarUsuario_Correo([FromBody] BuscarUsuarioRequest request)
         {
             _logger.LogInformation("Entrando al método que consulta los Usuario");
 
@@ -106,7 +86,7 @@ namespace ApiMS.Controllers
         [HttpGet("BuscarUsuario_ID")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<List<BuscarUsuarioResponse>>> BuscarUsuario_ID([FromBody] BuscarUsuarioIDRequest request)
+        public async Task<ActionResult<List<UsuarioResponse>>> BuscarUsuario_ID([FromBody] BuscarUsuarioIDRequest request)
         {
             _logger.LogInformation("Entrando al método que consulta los Usuario");
 
@@ -126,7 +106,7 @@ namespace ApiMS.Controllers
         [HttpGet("BuscarUsuario_Departamento")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<List<BuscarUsuarioResponse>>> BuscarUsuario_Departamento([FromBody] BuscarUsuarioRequest request)
+        public async Task<ActionResult<List<UsuarioResponse>>> BuscarUsuario_Departamento([FromBody] BuscarUsuarioRequest request)
         {
             _logger.LogInformation("Entrando al método que consulta los Usuario");
 
@@ -143,34 +123,6 @@ namespace ApiMS.Controllers
                     "Ocurrio un error al intentar registrar un valor de prueba", ex.InnerException?.ToString());
             }
         }
-
-
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        [HttpPost("AgregarUsuario_Operario")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
-        public async Task<ActionResult<Guid>> AgregarUsuario_Operario([FromBody] RegistrarPrestadorRequest request)
-        {
-            _logger.LogInformation("Entrando al método que registra los valores de prueba");
-            try
-            {
-                var command = new AgregarRegistrarPrestadorCommand(request);
-                var response = await _mediator.Send(command);
-                return Response200(NewResponseOperation(), response);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("Ocurrio un error al intentar registrar un valor de prueba. Exception: " + ex);
-                return Response400(NewResponseOperation(), ex.Message,
-                    "Ocurrio un error al intentar registrar un valor de prueba", ex.InnerException?.ToString());
-            }
-        }
-
-
-
-
 
     }
 }

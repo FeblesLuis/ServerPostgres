@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ApiMS.Application.Handlers.Queries.Usuarios
 {
-    public class BuscarUsuariosUsuarioHandler : IRequestHandler<BuscarUsuariosUsuarioQuery, List<BuscarUsuarioResponse>>
+    public class BuscarUsuariosUsuarioHandler : IRequestHandler<BuscarUsuariosUsuarioQuery, List<UsuarioResponse>>
     {
         private readonly ApiDbContext _dbContext;
         private readonly ILogger<BuscarUsuariosUsuarioHandler> _logger;
@@ -22,13 +22,13 @@ namespace ApiMS.Application.Handlers.Queries.Usuarios
             _logger = logger;
         }
 
-        public Task<List<BuscarUsuarioResponse>> Handle(BuscarUsuariosUsuarioQuery request, CancellationToken cancellationToken)
+        public Task<List<UsuarioResponse>> Handle(BuscarUsuariosUsuarioQuery request, CancellationToken cancellationToken)
         {
             try
             {
                 if (request is null) //Pregunto si el request es nulo
                 {
-                    _logger.LogWarning("ConsultarUsuarioIdQueryHandler.Handle: Request nulo.");
+                    _logger.LogWarning("BuscarUsuariosUsuario.Handle: Request nulo.");
                     throw new ArgumentNullException(nameof(request));
 
                 }
@@ -39,17 +39,17 @@ namespace ApiMS.Application.Handlers.Queries.Usuarios
             }
             catch (Exception)
             {
-                _logger.LogWarning("ConsultarUsuariosQueryHandler.Handle: ArgumentNullException");
+                _logger.LogWarning("BuscarUsuariosUsuario.Handle: ArgumentNullException");
                 throw;
             }
         }
 
-        private async Task<List<BuscarUsuarioResponse>> HandleAsync(BuscarUsuariosUsuarioQuery request)
+        private async Task<List<UsuarioResponse>> HandleAsync(BuscarUsuariosUsuarioQuery request)
         {
 
             try
             {
-                _logger.LogInformation("ConsultarUsuariousuarioQueryHandler.HandleAsync");
+                _logger.LogInformation("BuscarUsuariosUsuario.HandleAsync");
                 var result = _dbContext.Usuario.Count(c => c.usuario == request._request.data);
 
                 if (result == 0) //Verifico que el Usuario exista
@@ -57,46 +57,52 @@ namespace ApiMS.Application.Handlers.Queries.Usuarios
                     throw new InvalidOperationException("No se encontro al usuario registrado");
                 }
 
-                //Traigo el ID del usuario para saber el departamento
-                var usuarioId = _dbContext.Usuario.Where(c => c.usuario == request._request.data).Select(c => new BuscarUsuarioResponse() { id = c.Id, });
+                // Realizar una consulta que una Usuario y Departamento
+                var usuariosConDepartamento = _dbContext.Usuario
+                    .Where(c => c.usuario == request._request.data) // Filtra por el usuario del usuario
+                    .Join(
+                        _dbContext.Departamento, // Une con la tabla Departamento
+                        usuario => usuario.Id, // Clave foránea en Usuario (ID del usuario)
+                        departamento => departamento.usuario.Id, // Clave primaria en Departamento (ID del usuario)
+                        (usuario, departamento) => new UsuarioResponse //Relleno el response
+                        {
+                            id = usuario.Id,
+                            CreatedAt = usuario.CreatedAt,
+                            CreatedBy = usuario.CreatedBy,
+                            UpdatedAt = usuario.UpdatedAt,
+                            UpdatedBy = usuario.UpdatedBy,
 
-                //Traigo al departmento
-                var departamentoObj = _dbContext.Departamento
-                 .Where(d => d.usuario.Id == usuarioId.FirstOrDefault().id) // Usar el ID del departamento
-                 .Select(d => new BuscarDepartamentoResponse
-                 {
-                     nombreDepartamento = d.nombre,
-                     cargo = d.cargo
-                 });
+                            usuario = usuario.usuario,
+                            nombre = usuario.nombre,
+                            apellido = usuario.apellido,
+                            password = usuario.password,
+                            correo = usuario.correo,
+                            discriminator = EF.Property<string>(usuario, "Discriminator"),
+                            respuesta_de_seguridad = usuario.respuesta_de_seguridad,
+                            respuesta_de_seguridad2 = usuario.respuesta_de_seguridad2,
+                            preguntas_de_seguridad = usuario.preguntas_de_seguridad,
+                            preguntas_de_seguridad2 = usuario.preguntas_de_seguridad2,
+                            estado = usuario.estado,
+                            departamento = new BuscarDepartamentoResponse // Asigna el departamento correspondiente
+                            {
+                                id = departamento.Id,
+                                CreatedAt = departamento.CreatedAt,
+                                CreatedBy = departamento.CreatedBy,
+                                UpdatedAt = departamento.UpdatedAt,
+                                UpdatedBy = departamento.UpdatedBy,
 
-                //Traigo al usuario
-                var usuario = _dbContext.Usuario.Where(c => c.usuario == request._request.data)
-                .Select(c => new BuscarUsuarioResponse() //Traemos al usuario de la bd
-                {
-                    id = c.Id,
-                    usuario = c.usuario,
-                    nombre = c.nombre,
-                    apellido = c.apellido,
-                    password = c.password,
-                    correo = c.correo,
-                    discriminator = EF.Property<string>(c, "Discriminator"),
-                    respuesta_de_seguridad = c.respuesta_de_seguridad,
-                    respuesta_de_seguridad2 = c.respuesta_de_seguridad2,
-                    preguntas_de_seguridad = c.preguntas_de_seguridad,
-                    preguntas_de_seguridad2 = c.preguntas_de_seguridad2,
-                    estado = c.estado,
-                    departamento = new BuscarDepartamentoResponse
-                    {
-                        nombreDepartamento = departamentoObj.FirstOrDefault().nombreDepartamento,
-                        cargo = departamentoObj.FirstOrDefault().cargo
-                    }
-                });
+                                nombreDepartamento = departamento.nombre,
+                                cargo = departamento.cargo
+                            }
+                        }
+                    )
+                    .ToList(); // Genera la consulta en una lista
 
-                return await usuario.ToListAsync();
+                return usuariosConDepartamento; //Retorno la lista
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error ConsultarUsuarioIdQueryHandler.HandleAsync. {Mensaje}", ex.Message);
+                _logger.LogError(ex, "Error BuscarUsuariosUsuario.HandleAsync. {Mensaje}", ex.Message);
                 throw;
             }
         }

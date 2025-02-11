@@ -63,3 +63,16 @@ C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Core\obj\De
 C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Core\obj\Debug\net8.0\refint\ApiMS.Core.dll
 C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Core\obj\Debug\net8.0\ApiMS.Core.pdb
 C:\Users\lfebles\OneDrive\Documentos\Programacion\Itera1\ApiMS\ApiMS.Core\obj\Debug\net8.0\ref\ApiMS.Core.dll
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\bin\Debug\net8.0\ApiMS.Core.deps.json
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\bin\Debug\net8.0\ApiMS.Core.dll
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\bin\Debug\net8.0\ApiMS.Core.pdb
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\obj\Debug\net8.0\ApiMS.Core.csproj.AssemblyReference.cache
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\obj\Debug\net8.0\ApiMS.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\obj\Debug\net8.0\ApiMS.Core.AssemblyInfoInputs.cache
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\obj\Debug\net8.0\ApiMS.Core.AssemblyInfo.cs
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\obj\Debug\net8.0\ApiMS.Core.csproj.CoreCompileInputs.cache
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\obj\Debug\net8.0\ApiMS.Core.sourcelink.json
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\obj\Debug\net8.0\ApiMS.Core.dll
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\obj\Debug\net8.0\refint\ApiMS.Core.dll
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\obj\Debug\net8.0\ApiMS.Core.pdb
+C:\Users\luisf\OneDrive\Documents\github\Iteracion 3\ApiMS\ApiMS.Core\obj\Debug\net8.0\ref\ApiMS.Core.dll

@@ -4,12 +4,13 @@ using ApiMS.Application.Responses.Usuarios;
 
 namespace ApiMS.Application.Queries.Usuarios
 {
-    public class BuscarUsuariosNombreQuery : IRequest<List<BuscarUsuarioResponse>>
+    public class BuscarUsuariosQuery : IRequest<List<UsuarioResponse>>
     {
         public BuscarUsuarioRequest _request { get; set; }
-        public BuscarUsuariosNombreQuery(BuscarUsuarioRequest request)
+        public BuscarUsuariosQuery(BuscarUsuarioRequest request)
         {
             _request = request;
         }
     }
 }
+

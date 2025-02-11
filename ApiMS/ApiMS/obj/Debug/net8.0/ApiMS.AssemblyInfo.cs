@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiMS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b494cd0eda8263b09890599de97b4bf504192503")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aec9b132c1ee36f2b4afece5c5160b4f8b29c808")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiMS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiMS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
