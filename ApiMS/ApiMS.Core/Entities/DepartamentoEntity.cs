@@ -13,6 +13,7 @@ namespace ApiMS.Core.Entities
 
         //Relacion FK 
             //1..1 Usuarios
+            public Guid usuario_Id { get; set; }
             public UsuarioEntity usuario { get; set; } = null!;
     }
 }

@@ -1,7 +1,9 @@
 ﻿public enum Estado
 {
-    Activo,
-    Inactivo,
-    Pendiente,
-    Cerrado
+    en_Proceso_Aprobacion,
+    sin_Procesar,
+    pendiente,
+    en_Proceso_Responsables,
+    seguimiento,
+    cerrado
 }

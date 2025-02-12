@@ -50,12 +50,12 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Property<bool?>("estado")
                         .HasColumnType("boolean");
 
-                    b.Property<Guid>("responsableId")
+                    b.Property<Guid>("responsable_Id")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("responsableId");
+                    b.HasIndex("responsable_Id");
 
                     b.ToTable("AccionesCorrectivas");
                 });
@@ -84,7 +84,7 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Property<string>("fecha_verificacion")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("noConformidadId")
+                    b.Property<Guid>("noConformidad_Id")
                         .HasColumnType("uuid");
 
                     b.Property<string>("observaciones")
@@ -95,7 +95,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("noConformidadId");
+                    b.HasIndex("noConformidad_Id");
 
                     b.ToTable("Cierre");
                 });
@@ -124,12 +124,12 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Property<string>("nombre")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("usuarioId")
+                    b.Property<Guid>("usuario_Id")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("usuarioId");
+                    b.HasIndex("usuario_Id");
 
                     b.ToTable("Departamento");
                 });
@@ -155,7 +155,7 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Property<string>("causa")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("cierreId")
+                    b.Property<Guid>("cierre_Id")
                         .HasColumnType("uuid");
 
                     b.Property<string>("origen")
@@ -163,7 +163,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("cierreId");
+                    b.HasIndex("cierre_Id");
 
                     b.ToTable("Inicadores");
                 });
@@ -172,6 +172,9 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("CalidadEntityId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedAt")
@@ -189,7 +192,7 @@ namespace ApiMS.Infrastructure.Migrations
                     b.PrimitiveCollection<List<string>>("areas_involucradas")
                         .HasColumnType("text[]");
 
-                    b.Property<Guid>("calidadId")
+                    b.Property<Guid>("calidad_id")
                         .HasColumnType("uuid");
 
                     b.Property<string>("consecuencias")
@@ -207,6 +210,9 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Property<int?>("prioridad")
                         .HasColumnType("integer");
 
+                    b.Property<Guid>("reporte_Id")
+                        .HasColumnType("uuid");
+
                     b.PrimitiveCollection<List<string>>("responsables")
                         .HasColumnType("text[]");
 
@@ -215,7 +221,11 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("calidadId");
+                    b.HasIndex("CalidadEntityId");
+
+                    b.HasIndex("calidad_id");
+
+                    b.HasIndex("reporte_Id");
 
                     b.ToTable("NoConformidad");
                 });
@@ -285,20 +295,15 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Property<string>("detectado_por")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("noConformidadId")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("titulo")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("usuarioId")
+                    b.Property<Guid>("usuario_Id")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("noConformidadId");
-
-                    b.HasIndex("usuarioId");
+                    b.HasIndex("usuario_Id");
 
                     b.ToTable("Reporte");
                 });
@@ -333,12 +338,12 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Property<string>("investigacion")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("noConformidadId")
+                    b.Property<Guid>("noConformidad_Id")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("noConformidadId");
+                    b.HasIndex("noConformidad_Id");
 
                     b.ToTable("Responsable");
                 });
@@ -347,6 +352,9 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("AccionCorrectivaEntityId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedAt")
@@ -361,17 +369,19 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("accionesCorrectivasId")
+                    b.Property<Guid>("accionesCorrectivas_Id")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("usuarioId")
+                    b.Property<Guid>("usuario_Id")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("accionesCorrectivasId");
+                    b.HasIndex("AccionCorrectivaEntityId");
 
-                    b.HasIndex("usuarioId");
+                    b.HasIndex("accionesCorrectivas_Id");
+
+                    b.HasIndex("usuario_Id");
 
                     b.ToTable("RevisionAccionesCorrectivas");
                 });
@@ -400,12 +410,17 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Property<string>("nombre")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("reporteId")
+                    b.Property<Guid>("reporte_Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("usuario_Id")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("reporteId");
+                    b.HasIndex("reporte_Id");
+
+                    b.HasIndex("usuario_Id");
 
                     b.ToTable("RevisionReporte");
                 });
@@ -434,7 +449,7 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Property<string>("fecha_seguimiento")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("noConformidadId")
+                    b.Property<Guid>("noConformidad_Id")
                         .HasColumnType("uuid");
 
                     b.Property<string>("observaciones")
@@ -445,7 +460,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("noConformidadId");
+                    b.HasIndex("noConformidad_Id");
 
                     b.ToTable("Seguimiento");
                 });
@@ -530,7 +545,7 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("cierreId")
+                    b.Property<Guid>("cierre_Id")
                         .HasColumnType("uuid");
 
                     b.Property<bool?>("efectiva")
@@ -544,7 +559,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("cierreId");
+                    b.HasIndex("cierre_Id");
 
                     b.ToTable("VerificacionEfectividad");
                 });
@@ -574,7 +589,7 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     b.HasOne("ApiMS.Core.Entities.ResponsableEntity", "responsable")
                         .WithMany()
-                        .HasForeignKey("responsableId")
+                        .HasForeignKey("responsable_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -585,7 +600,7 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     b.HasOne("ApiMS.Core.Entities.NoConformidadEntity", "noConformidad")
                         .WithMany()
-                        .HasForeignKey("noConformidadId")
+                        .HasForeignKey("noConformidad_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -596,7 +611,7 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     b.HasOne("ApiMS.Core.Entities.UsuarioEntity", "usuario")
                         .WithMany()
-                        .HasForeignKey("usuarioId")
+                        .HasForeignKey("usuario_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -607,7 +622,7 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     b.HasOne("ApiMS.Core.Entities.CierreEntity", "cierre")
                         .WithMany()
-                        .HasForeignKey("cierreId")
+                        .HasForeignKey("cierre_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -616,30 +631,34 @@ namespace ApiMS.Infrastructure.Migrations
 
             modelBuilder.Entity("ApiMS.Core.Entities.NoConformidadEntity", b =>
                 {
-                    b.HasOne("ApiMS.Core.Entities.CalidadEntity", "calidad")
+                    b.HasOne("ApiMS.Core.Entities.CalidadEntity", null)
                         .WithMany("noConformidad")
-                        .HasForeignKey("calidadId")
+                        .HasForeignKey("CalidadEntityId");
+
+                    b.HasOne("ApiMS.Core.Entities.CalidadEntity", "calidad")
+                        .WithMany()
+                        .HasForeignKey("calidad_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ApiMS.Core.Entities.ReporteEntity", "reporte")
+                        .WithMany()
+                        .HasForeignKey("reporte_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("calidad");
+
+                    b.Navigation("reporte");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.ReporteEntity", b =>
                 {
-                    b.HasOne("ApiMS.Core.Entities.NoConformidadEntity", "noConformidad")
-                        .WithMany()
-                        .HasForeignKey("noConformidadId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("ApiMS.Core.Entities.UsuarioEntity", "usuario")
                         .WithMany()
-                        .HasForeignKey("usuarioId")
+                        .HasForeignKey("usuario_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("noConformidad");
 
                     b.Navigation("usuario");
                 });
@@ -648,7 +667,7 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     b.HasOne("ApiMS.Core.Entities.NoConformidadEntity", "noConformidad")
                         .WithMany()
-                        .HasForeignKey("noConformidadId")
+                        .HasForeignKey("noConformidad_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -657,15 +676,19 @@ namespace ApiMS.Infrastructure.Migrations
 
             modelBuilder.Entity("ApiMS.Core.Entities.RevisionAccionesCorrectivasEntity", b =>
                 {
-                    b.HasOne("ApiMS.Core.Entities.AccionCorrectivaEntity", "accionesCorrectivas")
+                    b.HasOne("ApiMS.Core.Entities.AccionCorrectivaEntity", null)
                         .WithMany("revisionAccionesCorrectivas")
-                        .HasForeignKey("accionesCorrectivasId")
+                        .HasForeignKey("AccionCorrectivaEntityId");
+
+                    b.HasOne("ApiMS.Core.Entities.AccionCorrectivaEntity", "accionesCorrectivas")
+                        .WithMany()
+                        .HasForeignKey("accionesCorrectivas_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ApiMS.Core.Entities.UsuarioEntity", "usuario")
                         .WithMany()
-                        .HasForeignKey("usuarioId")
+                        .HasForeignKey("usuario_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -678,18 +701,26 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     b.HasOne("ApiMS.Core.Entities.ReporteEntity", "reporte")
                         .WithMany()
-                        .HasForeignKey("reporteId")
+                        .HasForeignKey("reporte_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ApiMS.Core.Entities.UsuarioEntity", "usuario")
+                        .WithMany()
+                        .HasForeignKey("usuario_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("reporte");
+
+                    b.Navigation("usuario");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.SeguimientoEntity", b =>
                 {
                     b.HasOne("ApiMS.Core.Entities.NoConformidadEntity", "noConformidad")
                         .WithMany()
-                        .HasForeignKey("noConformidadId")
+                        .HasForeignKey("noConformidad_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -700,7 +731,7 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     b.HasOne("ApiMS.Core.Entities.CierreEntity", "cierre")
                         .WithMany()
-                        .HasForeignKey("cierreId")
+                        .HasForeignKey("cierre_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

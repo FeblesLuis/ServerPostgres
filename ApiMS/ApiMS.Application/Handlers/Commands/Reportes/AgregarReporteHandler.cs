@@ -1,13 +1,13 @@
 ﻿using ApiMS.Application.Commands.Reportes;
-using ApiMS.Application.Commands.Usuario;
-using ApiMS.Application.Handlers.Commands.Usuarios;
-using ApiMS.Application.Mappers.Departamento;
-using ApiMS.Application.Mappers.Usuario;
-using ApiMS.Application.Requests.Departamento;
+using ApiMS.Application.Mappers.Reporte;
+using ApiMS.Application.Mappers.RevisionReporte;
+using ApiMS.Application.Requests.RevisionReporte;
 using ApiMS.Application.Responses.Reportes;
 using ApiMS.Application.Responses.Usuarios;
+using ApiMS.Core.Entities;
 using ApiMS.Infrastructure.Database;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -26,9 +26,9 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
             _dbContext = dbContext;
             _logger = logger;
         }
-    }
 
-    public Task<IdReporteResponse> Handle(AgregarReporteCommand request, CancellationToken cancellationToken)
+
+        public Task<IdReporteResponse> Handle(AgregarReporteCommand request, CancellationToken cancellationToken)
         {
             try
             {
@@ -56,103 +56,63 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
             try
             {
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                ///     Pregunto si el usuario ya esta registrado
+                ///     Busco el nombre del departamento
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-                var Registrado = _dbContext.Usuario.Count(c => c.correo == request._request.correo);
-                if (Registrado > 0)
-                {
-                    throw new InvalidOperationException("Registro fallido: el usuario ya existe");
-                }
-                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                ///     Creo el Usuario
-                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-                // Suponiendo que nombre = "Luis", nombre2 = "Felipe" y apellido = "Febles" y apellido2 = "Castro" 
-
-                //Genero el primer Usuario
-                request._request.usuario =
-                    request._request.primer_nombre.Substring(0, 1) + // Primera letra del nombre
-                    request._request.primer_apellido;                // Apellido completo
-
-                //Pregunto si Mi usuario no esta registrado en el sistema = lfebles
-                var result = _dbContext.Usuario.Count(c => c.usuario == request._request.usuario);
-
-                if (result > 0) //Si ya estoy registrado agrego la primera letra del segundo nombre lffebles 
-                {
-                    request._request.usuario =
-                        request._request.primer_nombre.Substring(0, 1) + // Primera letra del nombre
-                        request._request.segundo_nombre.Substring(0, 1) + // Primera letra del nombre2
-                        request._request.primer_apellido;                // Apellido completo
-                }
-
-                //Pregunto si Mi usuario no esta registrado en el sistema
-                var result2 = _dbContext.Usuario.Count(c => c.usuario == request._request.usuario);
-
-                if (result2 > 0) //Si ya estoy registrado agrego la primera letra del segundo apellido lffeblesC
-                {
-                    request._request.usuario =
-                        request._request.primer_nombre.Substring(0, 1) +    // Primera letra del nombre
-                        request._request.segundo_nombre.Substring(0, 1) +   // Primera letra del nombre2
-                        request._request.primer_apellido +                  // Apellido completo
-                        request._request.segundo_apellido.Substring(0, 1);  // Primera letra del Apellido
-                }
-
+                var dep_usuario = _dbContext.Usuario
+                                                .Where(u => u.Id == request._request.id) // Filtra por el Id del usuario
+                                                .Select(u => new
+                                                {
+                                                    NombreDepartamento = _dbContext.Departamento
+                                                                            .Where(d => d.usuario.Id == u.Id) // Filtra el departamento del usuario
+                                                                            .Select(d => d.nombre)
+                                                                            .FirstOrDefault()
+                                                })
+                                                .FirstOrDefault(); // Obtiene el primer resultado
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                ///     Mappeo la entidad para la insercion y le paso los campos / Luego Inserto en la bd
+                ///     Busco al usuario gerente de ese departamento
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                if (request._request.nombreDepartamento.Contains("Calidad"))
-                {
-                    // Crear una instancia de CalidadEntity con los datos del request
-                    var entity = AgregarUsuarioMapper.MapRequestCalidadEntity(request._request);
 
-                    // Lleno una instancia para mapear el departamento y agregarlo
-                    var request_departamento = new AgregarDepartamentoRequest();
-                    request_departamento.nombre = request._request.nombreDepartamento;
-                    request_departamento.cargo = request._request.cargoDepartamento;
+                var departamentoConUsuarios = _dbContext.Departamento
+                                                            .Where(d => d.nombre == dep_usuario.NombreDepartamento && d.cargo.ToLower().Contains("gerente")) // Filtra por el nombre del departamento
+                                                            .SelectMany(d => _dbContext.Usuario
+                                                                                            .Where(u => u.Id == d.usuario.Id) // Filtra los usuarios en el departamento
+                                                                                            .Select(u => new UsuarioResponse // Proyecta el usuario asociado
+                                                                                            {
+                                                                                                id = u.Id,
+                                                                                                nombre = u.nombre,
+                                                                                                departamento = new BuscarDepartamentoResponse // Asigna el departamento correspondiente
+                                                                                                {
+                                                                                                    cargo = d.cargo,
+                                                                                                    nombreDepartamento = d.nombre,
+                                                                                                }
+                                                                                            }))
+                                                            .FirstOrDefault(); // Genera la consulta en una lista
 
-                    var departamento = AgregarDepartamentoMapper.MapRequestDepartamentoEntity(request_departamento, entity);
 
-                    // Agregar el usuario al DbContext
-                    _dbContext.Calidad.Add(entity);
-                    await _dbContext.SaveEfContextChanges("APP");
-                    // Agregar el Departamento al DbContext
-                    _dbContext.Departamento.Add(departamento);
-                    await _dbContext.SaveEfContextChanges("APP");
+                var usuario = new UsuarioEntity { Id = (Guid)departamentoConUsuarios.id };
+                //Agrego el reporte
 
-                    //Doy commit
-                    transaccion.Commit();
+                var reporte = ReporteMapper.MapRequestReporteEntity(request._request, usuario);
+                _dbContext.Reporte.Add(reporte);
+                await _dbContext.SaveEfContextChanges("APP");
 
-                    //Retorno ID
-                    return new IdUsuarioResponse(entity.Id);
-                }
-                else
-                {
-                    // Crear una instancia de OperarioEntity con los datos del request
-                    var entity = AgregarUsuarioMapper.MapRequestOperarioEntity(request._request);
+                // Agregar el Departamento al DbContext
+                var revisionRequest = new RevisionReporteRequest();
+                revisionRequest.nombre = departamentoConUsuarios.nombre;
+                revisionRequest.estado = false;
+                var revision = RevisionReporteMapper.MapRequestRevisionReporteEntity(revisionRequest, usuario, reporte);
 
-                    // Lleno una instancia para mapear el departamento y agregarlo
-                    var request_departamento = new AgregarDepartamentoRequest();
-                    request_departamento.nombre = request._request.nombreDepartamento;
-                    request_departamento.cargo = request._request.cargoDepartamento;
 
-                    var departamento = AgregarDepartamentoMapper.MapRequestDepartamentoEntity(request_departamento, entity);
+                _dbContext.RevisionReporte.Add(revision);
+                await _dbContext.SaveEfContextChanges("APP");
 
-                    // Agregar el usuario al DbContext
-                    _dbContext.Operario.Add(entity);
-                    await _dbContext.SaveEfContextChanges("APP");
-                    // Agregar el Departamento al DbContext
-                    _dbContext.Departamento.Add(departamento);
-                    await _dbContext.SaveEfContextChanges("APP");
 
-                    //Doy commit
-                    transaccion.Commit();
 
-                    //Retorno ID
-                    return new IdUsuarioResponse(entity.Id);
+                return new IdReporteResponse(reporte.Id);
 
-                }
+
+
             }
             catch (Exception ex)
             {
@@ -165,3 +125,5 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
         }
 
     }
+
+}

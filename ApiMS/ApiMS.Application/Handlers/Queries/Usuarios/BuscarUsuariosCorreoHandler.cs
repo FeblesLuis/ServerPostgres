@@ -59,7 +59,7 @@ namespace ApiMS.Application.Handlers.Queries.Usuarios
 
                 // Realizar una consulta que una Usuario y Departamento
                 var usuariosConDepartamento = _dbContext.Usuario
-                    .Where(c => c.correo == request._request.data) // Filtra por el correo del usuario
+                    .Where(c => c.correo.ToLower().Contains(request._request.data.ToLower())) // Filtra por el correo del usuario
                     .Join(
                         _dbContext.Departamento, // Une con la tabla Departamento
                         usuario => usuario.Id, // Clave foránea en Usuario (ID del usuario)

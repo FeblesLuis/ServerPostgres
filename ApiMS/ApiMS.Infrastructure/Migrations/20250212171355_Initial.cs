@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ApiMS.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initia_1 : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -65,7 +65,7 @@ namespace ApiMS.Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     nombre = table.Column<string>(type: "text", nullable: true),
                     cargo = table.Column<string>(type: "text", nullable: true),
-                    usuarioId = table.Column<Guid>(type: "uuid", nullable: false),
+                    usuario_Id = table.Column<Guid>(type: "uuid", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -75,8 +75,34 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Departamento", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Departamento_Usuario_usuarioId",
-                        column: x => x.usuarioId,
+                        name: "FK_Departamento_Usuario_usuario_Id",
+                        column: x => x.usuario_Id,
+                        principalTable: "Usuario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Reporte",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    detectado_por = table.Column<string>(type: "text", nullable: true),
+                    area = table.Column<string>(type: "text", nullable: true),
+                    titulo = table.Column<string>(type: "text", nullable: true),
+                    descripcion = table.Column<string>(type: "text", nullable: true),
+                    usuario_Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedBy = table.Column<string>(type: "text", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedBy = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reporte", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Reporte_Usuario_usuario_Id",
+                        column: x => x.usuario_Id,
                         principalTable: "Usuario",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -95,7 +121,9 @@ namespace ApiMS.Infrastructure.Migrations
                     prioridad = table.Column<int>(type: "integer", nullable: true),
                     descripcion = table.Column<string>(type: "text", nullable: true),
                     estado = table.Column<int>(type: "integer", nullable: false),
-                    calidadId = table.Column<Guid>(type: "uuid", nullable: false),
+                    calidad_id = table.Column<Guid>(type: "uuid", nullable: false),
+                    reporte_Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    CalidadEntityId = table.Column<Guid>(type: "uuid", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -105,8 +133,50 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_NoConformidad", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_NoConformidad_Usuario_calidadId",
-                        column: x => x.calidadId,
+                        name: "FK_NoConformidad_Reporte_reporte_Id",
+                        column: x => x.reporte_Id,
+                        principalTable: "Reporte",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_NoConformidad_Usuario_CalidadEntityId",
+                        column: x => x.CalidadEntityId,
+                        principalTable: "Usuario",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_NoConformidad_Usuario_calidad_id",
+                        column: x => x.calidad_id,
+                        principalTable: "Usuario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RevisionReporte",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    nombre = table.Column<string>(type: "text", nullable: true),
+                    estado = table.Column<bool>(type: "boolean", nullable: true),
+                    reporte_Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    usuario_Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedBy = table.Column<string>(type: "text", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedBy = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RevisionReporte", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RevisionReporte_Reporte_reporte_Id",
+                        column: x => x.reporte_Id,
+                        principalTable: "Reporte",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_RevisionReporte_Usuario_usuario_Id",
+                        column: x => x.usuario_Id,
                         principalTable: "Usuario",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -121,7 +191,7 @@ namespace ApiMS.Infrastructure.Migrations
                     observaciones = table.Column<string>(type: "text", nullable: true),
                     responsable = table.Column<string>(type: "text", nullable: true),
                     fecha_verificacion = table.Column<string>(type: "text", nullable: true),
-                    noConformidadId = table.Column<Guid>(type: "uuid", nullable: false),
+                    noConformidad_Id = table.Column<Guid>(type: "uuid", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -131,42 +201,9 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Cierre", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Cierre_NoConformidad_noConformidadId",
-                        column: x => x.noConformidadId,
+                        name: "FK_Cierre_NoConformidad_noConformidad_Id",
+                        column: x => x.noConformidad_Id,
                         principalTable: "NoConformidad",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Reporte",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    detectado_por = table.Column<string>(type: "text", nullable: true),
-                    area = table.Column<string>(type: "text", nullable: true),
-                    titulo = table.Column<string>(type: "text", nullable: true),
-                    descripcion = table.Column<string>(type: "text", nullable: true),
-                    usuarioId = table.Column<Guid>(type: "uuid", nullable: false),
-                    noConformidadId = table.Column<Guid>(type: "uuid", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    CreatedBy = table.Column<string>(type: "text", nullable: true),
-                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    UpdatedBy = table.Column<string>(type: "text", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Reporte", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Reporte_NoConformidad_noConformidadId",
-                        column: x => x.noConformidadId,
-                        principalTable: "NoConformidad",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Reporte_Usuario_usuarioId",
-                        column: x => x.usuarioId,
-                        principalTable: "Usuario",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -180,7 +217,7 @@ namespace ApiMS.Infrastructure.Migrations
                     analisis_causa = table.Column<string>(type: "text", nullable: true),
                     correccion = table.Column<string>(type: "text", nullable: true),
                     analisis_riesgo = table.Column<string>(type: "text", nullable: true),
-                    noConformidadId = table.Column<Guid>(type: "uuid", nullable: false),
+                    noConformidad_Id = table.Column<Guid>(type: "uuid", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -190,8 +227,8 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Responsable", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Responsable_NoConformidad_noConformidadId",
-                        column: x => x.noConformidadId,
+                        name: "FK_Responsable_NoConformidad_noConformidad_Id",
+                        column: x => x.noConformidad_Id,
                         principalTable: "NoConformidad",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -206,7 +243,7 @@ namespace ApiMS.Infrastructure.Migrations
                     estatus = table.Column<string>(type: "text", nullable: true),
                     observaciones = table.Column<string>(type: "text", nullable: true),
                     realizado_por = table.Column<string>(type: "text", nullable: true),
-                    noConformidadId = table.Column<Guid>(type: "uuid", nullable: false),
+                    noConformidad_Id = table.Column<Guid>(type: "uuid", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -216,8 +253,8 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Seguimiento", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Seguimiento_NoConformidad_noConformidadId",
-                        column: x => x.noConformidadId,
+                        name: "FK_Seguimiento_NoConformidad_noConformidad_Id",
+                        column: x => x.noConformidad_Id,
                         principalTable: "NoConformidad",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -230,7 +267,7 @@ namespace ApiMS.Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     origen = table.Column<string>(type: "text", nullable: true),
                     causa = table.Column<string>(type: "text", nullable: true),
-                    cierreId = table.Column<Guid>(type: "uuid", nullable: false),
+                    cierre_Id = table.Column<Guid>(type: "uuid", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -240,8 +277,8 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Inicadores", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Inicadores_Cierre_cierreId",
-                        column: x => x.cierreId,
+                        name: "FK_Inicadores_Cierre_cierre_Id",
+                        column: x => x.cierre_Id,
                         principalTable: "Cierre",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -255,7 +292,7 @@ namespace ApiMS.Infrastructure.Migrations
                     efectiva = table.Column<bool>(type: "boolean", nullable: true),
                     observaciones = table.Column<string>(type: "text", nullable: true),
                     realizado_por = table.Column<string>(type: "text", nullable: true),
-                    cierreId = table.Column<Guid>(type: "uuid", nullable: false),
+                    cierre_Id = table.Column<Guid>(type: "uuid", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -265,33 +302,9 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_VerificacionEfectividad", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_VerificacionEfectividad_Cierre_cierreId",
-                        column: x => x.cierreId,
+                        name: "FK_VerificacionEfectividad_Cierre_cierre_Id",
+                        column: x => x.cierre_Id,
                         principalTable: "Cierre",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "RevisionReporte",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    nombre = table.Column<string>(type: "text", nullable: true),
-                    estado = table.Column<bool>(type: "boolean", nullable: true),
-                    reporteId = table.Column<Guid>(type: "uuid", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    CreatedBy = table.Column<string>(type: "text", nullable: true),
-                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    UpdatedBy = table.Column<string>(type: "text", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_RevisionReporte", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_RevisionReporte_Reporte_reporteId",
-                        column: x => x.reporteId,
-                        principalTable: "Reporte",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -304,7 +317,7 @@ namespace ApiMS.Infrastructure.Migrations
                     acciones_correctivas = table.Column<List<string>>(type: "text[]", nullable: true),
                     acciones_preventivas = table.Column<List<string>>(type: "text[]", nullable: true),
                     estado = table.Column<bool>(type: "boolean", nullable: true),
-                    responsableId = table.Column<Guid>(type: "uuid", nullable: false),
+                    responsable_Id = table.Column<Guid>(type: "uuid", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -314,8 +327,8 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_AccionesCorrectivas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AccionesCorrectivas_Responsable_responsableId",
-                        column: x => x.responsableId,
+                        name: "FK_AccionesCorrectivas_Responsable_responsable_Id",
+                        column: x => x.responsable_Id,
                         principalTable: "Responsable",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -326,8 +339,9 @@ namespace ApiMS.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    accionesCorrectivasId = table.Column<Guid>(type: "uuid", nullable: false),
-                    usuarioId = table.Column<Guid>(type: "uuid", nullable: false),
+                    accionesCorrectivas_Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    usuario_Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    AccionCorrectivaEntityId = table.Column<Guid>(type: "uuid", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -337,83 +351,103 @@ namespace ApiMS.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_RevisionAccionesCorrectivas", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_RevisionAccionesCorrectivas_AccionesCorrectivas_AccionCorre~",
+                        column: x => x.AccionCorrectivaEntityId,
+                        principalTable: "AccionesCorrectivas",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_RevisionAccionesCorrectivas_AccionesCorrectivas_accionesCor~",
-                        column: x => x.accionesCorrectivasId,
+                        column: x => x.accionesCorrectivas_Id,
                         principalTable: "AccionesCorrectivas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_RevisionAccionesCorrectivas_Usuario_usuarioId",
-                        column: x => x.usuarioId,
+                        name: "FK_RevisionAccionesCorrectivas_Usuario_usuario_Id",
+                        column: x => x.usuario_Id,
                         principalTable: "Usuario",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AccionesCorrectivas_responsableId",
+                name: "IX_AccionesCorrectivas_responsable_Id",
                 table: "AccionesCorrectivas",
-                column: "responsableId");
+                column: "responsable_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Cierre_noConformidadId",
+                name: "IX_Cierre_noConformidad_Id",
                 table: "Cierre",
-                column: "noConformidadId");
+                column: "noConformidad_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Departamento_usuarioId",
+                name: "IX_Departamento_usuario_Id",
                 table: "Departamento",
-                column: "usuarioId");
+                column: "usuario_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Inicadores_cierreId",
+                name: "IX_Inicadores_cierre_Id",
                 table: "Inicadores",
-                column: "cierreId");
+                column: "cierre_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_NoConformidad_calidadId",
+                name: "IX_NoConformidad_calidad_id",
                 table: "NoConformidad",
-                column: "calidadId");
+                column: "calidad_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reporte_noConformidadId",
+                name: "IX_NoConformidad_CalidadEntityId",
+                table: "NoConformidad",
+                column: "CalidadEntityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_NoConformidad_reporte_Id",
+                table: "NoConformidad",
+                column: "reporte_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reporte_usuario_Id",
                 table: "Reporte",
-                column: "noConformidadId");
+                column: "usuario_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reporte_usuarioId",
-                table: "Reporte",
-                column: "usuarioId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Responsable_noConformidadId",
+                name: "IX_Responsable_noConformidad_Id",
                 table: "Responsable",
-                column: "noConformidadId");
+                column: "noConformidad_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RevisionAccionesCorrectivas_accionesCorrectivasId",
+                name: "IX_RevisionAccionesCorrectivas_AccionCorrectivaEntityId",
                 table: "RevisionAccionesCorrectivas",
-                column: "accionesCorrectivasId");
+                column: "AccionCorrectivaEntityId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RevisionAccionesCorrectivas_usuarioId",
+                name: "IX_RevisionAccionesCorrectivas_accionesCorrectivas_Id",
                 table: "RevisionAccionesCorrectivas",
-                column: "usuarioId");
+                column: "accionesCorrectivas_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RevisionReporte_reporteId",
+                name: "IX_RevisionAccionesCorrectivas_usuario_Id",
+                table: "RevisionAccionesCorrectivas",
+                column: "usuario_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RevisionReporte_reporte_Id",
                 table: "RevisionReporte",
-                column: "reporteId");
+                column: "reporte_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Seguimiento_noConformidadId",
+                name: "IX_RevisionReporte_usuario_Id",
+                table: "RevisionReporte",
+                column: "usuario_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Seguimiento_noConformidad_Id",
                 table: "Seguimiento",
-                column: "noConformidadId");
+                column: "noConformidad_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_VerificacionEfectividad_cierreId",
+                name: "IX_VerificacionEfectividad_cierre_Id",
                 table: "VerificacionEfectividad",
-                column: "cierreId");
+                column: "cierre_Id");
         }
 
         /// <inheritdoc />
@@ -444,9 +478,6 @@ namespace ApiMS.Infrastructure.Migrations
                 name: "AccionesCorrectivas");
 
             migrationBuilder.DropTable(
-                name: "Reporte");
-
-            migrationBuilder.DropTable(
                 name: "Cierre");
 
             migrationBuilder.DropTable(
@@ -454,6 +485,9 @@ namespace ApiMS.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "NoConformidad");
+
+            migrationBuilder.DropTable(
+                name: "Reporte");
 
             migrationBuilder.DropTable(
                 name: "Usuario");

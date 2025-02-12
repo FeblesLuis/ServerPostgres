@@ -97,14 +97,14 @@ namespace ApiMS.Application.Handlers.Commands.Usuarios
                 if (request._request.nombreDepartamento.Contains("Calidad")) 
                 {
                     // Crear una instancia de CalidadEntity con los datos del request
-                    var entity = AgregarUsuarioMapper.MapRequestCalidadEntity(request._request);
+                    var entity = UsuarioMapper.MapRequestCalidadEntity(request._request);
 
                     // Lleno una instancia para mapear el departamento y agregarlo
                     var request_departamento = new AgregarDepartamentoRequest();
                     request_departamento.nombre = request._request.nombreDepartamento;
                     request_departamento.cargo = request._request.cargoDepartamento;
 
-                    var departamento = AgregarDepartamentoMapper.MapRequestDepartamentoEntity(request_departamento, entity);
+                    var departamento = DepartamentoMapper.MapRequestDepartamentoEntity(request_departamento, entity);
 
                     // Agregar el usuario al DbContext
                     _dbContext.Calidad.Add(entity);
@@ -122,14 +122,14 @@ namespace ApiMS.Application.Handlers.Commands.Usuarios
                 else
                 {
                     // Crear una instancia de OperarioEntity con los datos del request
-                    var entity = AgregarUsuarioMapper.MapRequestOperarioEntity(request._request);
+                    var entity = UsuarioMapper.MapRequestOperarioEntity(request._request);
 
                     // Lleno una instancia para mapear el departamento y agregarlo
                     var request_departamento = new AgregarDepartamentoRequest();
                     request_departamento.nombre = request._request.nombreDepartamento;
                     request_departamento.cargo = request._request.cargoDepartamento;
 
-                    var departamento = AgregarDepartamentoMapper.MapRequestDepartamentoEntity(request_departamento, entity);
+                    var departamento = DepartamentoMapper.MapRequestDepartamentoEntity(request_departamento, entity);
 
                     // Agregar el usuario al DbContext
                     _dbContext.Operario.Add(entity);

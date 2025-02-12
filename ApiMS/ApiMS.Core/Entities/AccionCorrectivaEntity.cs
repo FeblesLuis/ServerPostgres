@@ -17,6 +17,7 @@ namespace ApiMS.Core.Entities
             public ICollection<RevisionAccionesCorrectivasEntity> revisionAccionesCorrectivas { set; get; } = null!;
         //Relaciones FK
             // 1..* Responsable
+            public Guid responsable_Id { get; set; }
             public ResponsableEntity responsable { get; set; } = null!;
     }
 }

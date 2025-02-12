@@ -4,7 +4,7 @@ using ApiMS.Core.Entities;
 
 namespace ApiMS.Application.Mappers.Usuario
 {
-    public class AgregarUsuarioMapper
+    public class UsuarioMapper
     {
 
         public static OperarioEntity MapRequestOperarioEntity(UsuarioRequest request)

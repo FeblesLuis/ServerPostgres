@@ -27,7 +27,13 @@ namespace ApiMS.Core.Entities
 
         //Relacion FK 
             //1..1 Usuarios
+            public Guid calidad_id { get; set; }
             public CalidadEntity calidad { get; set; } = null!;
+
+            // 1..1 Reporte
+            public Guid reporte_Id { get; set; }
+            public ReporteEntity reporte { get; set; } = null!;
+
 
     }
 

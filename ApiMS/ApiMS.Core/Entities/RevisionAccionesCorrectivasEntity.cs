@@ -10,8 +10,12 @@ namespace ApiMS.Core.Entities
     {
         // Relacion FK
             // AccionesCorrectivas 1..n 
+
+            public Guid accionesCorrectivas_Id { get; set; }
             public AccionCorrectivaEntity accionesCorrectivas { set; get; } = null!;
+
             // Usuario 1..*
+            public Guid usuario_Id { get; set; }
             public UsuarioEntity usuario { get; set; } = null!;
     }
 }

@@ -12,7 +12,8 @@ namespace ApiMS.Core.Entities
         public string? causa { get; set; }    // Causa
 
         //Relacion FK 
-            //1..1 Cierre
+        //1..1 Cierre
+            public Guid cierre_Id { get; set; }
             public CierreEntity cierre { get; set; } = null!;
     }
 

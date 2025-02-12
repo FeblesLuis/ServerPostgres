@@ -19,6 +19,7 @@ namespace ApiMS.Core.Entities
 
         //Relacion FK 
             //1..* No Conformidad
+            public Guid noConformidad_Id { get; set; }
             public NoConformidadEntity noConformidad { get; set; } = null!;
     }
 

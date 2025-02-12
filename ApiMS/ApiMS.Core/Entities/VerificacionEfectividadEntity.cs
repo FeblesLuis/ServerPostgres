@@ -14,6 +14,7 @@ namespace ApiMS.Core.Entities
 
         //Relacion FK 
             //1..1 Cierre
+            public Guid cierre_Id { get; set; }
             public CierreEntity cierre { get; set; } = null!;
     }
 

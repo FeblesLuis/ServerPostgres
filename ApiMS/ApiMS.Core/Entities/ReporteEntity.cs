@@ -16,11 +16,11 @@ namespace ApiMS.Core.Entities
         //Relacion PK 1..1 con Revision 
             public RevisionReporteEntity revision =new RevisionReporteEntity();
 
+            public NoConformidadEntity? noConformidad;
         //Relaciones FK
             // 1..n con Usuarios 
-                public UsuarioEntity usuario { get; set; } = null!;
-            // 1..1 con NoConformidad
-                public NoConformidadEntity noConformidad { get; set; } = null!;
+            public Guid usuario_Id { get; set; }
+            public UsuarioEntity usuario { get; set; } = null!;
 
     }
 

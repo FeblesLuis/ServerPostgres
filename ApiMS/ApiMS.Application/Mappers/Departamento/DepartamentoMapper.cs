@@ -4,7 +4,7 @@ using ApiMS.Core.Entities;
 
 namespace ApiMS.Application.Mappers.Departamento
 {
-    public class AgregarDepartamentoMapper
+    public class DepartamentoMapper
     {
         public static DepartamentoEntity MapRequestDepartamentoEntity(AgregarDepartamentoRequest request, UsuarioEntity usuario)
         {

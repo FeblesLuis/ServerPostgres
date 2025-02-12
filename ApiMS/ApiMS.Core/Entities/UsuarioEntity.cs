@@ -21,7 +21,9 @@ public class UsuarioEntity : BaseEntity
         public DepartamentoEntity departamento = new DepartamentoEntity();
         // 1..n Reporte
         public ICollection<ReporteEntity>? reporte;
-        // 1..n AccionesCorrectivas 
+        // 1..n RevisionReporte
+        public ICollection<RevisionReporteEntity>? revisionReporte;
+        // 1..n RevisionAcciones 
         public ICollection<RevisionAccionesCorrectivasEntity>? revicionAccionesCorrectivas;
 
 }

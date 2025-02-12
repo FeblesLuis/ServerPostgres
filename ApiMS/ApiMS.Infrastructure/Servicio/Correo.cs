@@ -2,11 +2,11 @@
 
 namespace ApiMS.Infrastructure.Servicio
 {
-    internal class Correo
+    public class Correo
     {
         private SmtpClient cliente = new SmtpClient("smtp.gmail.com", 587); //Creo la variable que envia correo atravez del protocolo SMTP
-        private string correo = "pagalotodo2023@gmail.com";
-        private string clave = "ybzosbdiwygeqsah"; //Ucab.123
+        private string correo = "";
+        private string clave = ""; 
 
         /// <summary>
         /// Envía un correo electrónico al destinatario especificado con el asunto y cuerpo del mensaje especificados.
