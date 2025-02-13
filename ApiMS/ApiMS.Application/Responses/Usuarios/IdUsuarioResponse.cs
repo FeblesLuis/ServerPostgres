@@ -3,12 +3,12 @@ namespace ApiMS.Application.Responses.Usuarios
 {
     public class IdUsuarioResponse
     {
+        public Guid? id { get; set; }
         public IdUsuarioResponse() { }
-        public IdUsuarioResponse(Guid data) 
+        public IdUsuarioResponse(Guid data)
         {
             id = data;
         }
-        public Guid? id { get; set; }
 
     }
 }

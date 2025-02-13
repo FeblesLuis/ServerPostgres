@@ -1,5 +1,6 @@
 ﻿using ApiMS.Core.Database;
 using ApiMS.Core.Entities;
+using ApiMS.Core.Entities.Relaciones;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq.Expressions;
@@ -19,13 +20,15 @@ public class ApiDbContext : DbContext , IApiDbContext
     public DbSet<CalidadEntity> Calidad { get; set; }
     public DbSet<CierreEntity> Cierre { get; set; }
     public DbSet<DepartamentoEntity> Departamento { get;set; }
-    public DbSet<IndicadoresEntity> Inicadores { get; set; }
+    public DbSet<IndicadoresEntity> Indicadores { get; set; }
     public DbSet<NoConformidadEntity> NoConformidad { get; set; }
     public DbSet<NotificacionEntity> Notificacion { get; set; }
     public DbSet<OperarioEntity> Operario { get; set; }
     public DbSet<ReporteEntity> Reporte { get; set; }
     public DbSet<ResponsableEntity> Responsable { get;set; }
-    public DbSet<RevisionAccionesCorrectivasEntity> RevisionAccionesCorrectivas { get; set; }
+    public DbSet<R_AccionesCorrectivas_UsuarioEntity> R_AccionesCorrectivas_Usuario { get; set; }
+    public DbSet<R_Calidad_NoConformidadEntity> R_Calidad_NoConformidad { get; set; }
+
     public DbSet<RevisionReporteEntity> RevisionReporte { get; set; }
     public DbSet<SeguimientoEntity> Seguimiento {  get; set; }
     public DbSet<UsuarioEntity> Usuario { get; set; }
@@ -65,11 +68,11 @@ public class ApiDbContext : DbContext , IApiDbContext
 
 
         ///////////////////////////////////////////////////////////////////////////////
-        // Configurar la relación entre DepartamentoEntity y UsuarioEntity
-        modelBuilder.Entity<DepartamentoEntity>()
-            .HasOne(r => r.usuario)
+        // Configurar la relación entre UsuarioEntity y DepartamentoEntity 
+        modelBuilder.Entity<UsuarioEntity>()
+            .HasOne(r => r.departamento)
             .WithMany()
-            .HasForeignKey(r => r.usuario_Id);
+            .HasForeignKey(r => r.departamento_Id);
 
 
         ///////////////////////////////////////////////////////////////////////////////
@@ -81,13 +84,21 @@ public class ApiDbContext : DbContext , IApiDbContext
 
 
         ///////////////////////////////////////////////////////////////////////////////
-        // Configurar la relación entre NoConformidadEntity y CalidadEntity
-        modelBuilder.Entity<NoConformidadEntity>()
+        // Configurar la relación entre R_calidad_NoConformidadEntity y CalidadEntity
+        modelBuilder.Entity<R_Calidad_NoConformidadEntity>()
             .HasOne(r => r.calidad)
             .WithMany()
-            .HasForeignKey(r => r.calidad_id);
+            .HasForeignKey(r => r.calidad_Id);
 
-        // Configurar la relación entre NoConformidadEntity y reporteEntity
+        // Configurar la relación entre R_calidad_NoConformidadEntity y no Condormidad
+        modelBuilder.Entity<R_Calidad_NoConformidadEntity>()
+            .HasOne(r => r.noConformidad)
+            .WithMany()
+            .HasForeignKey(r => r.noConformidad_Id);
+
+
+        ///////////////////////////////////////////////////////////////////////////////
+        // Configurar la relación entre NoConformidadEntity y ReporteEntity
         modelBuilder.Entity<NoConformidadEntity>()
             .HasOne(r => r.reporte)
             .WithMany()
@@ -102,23 +113,29 @@ public class ApiDbContext : DbContext , IApiDbContext
             .HasForeignKey(r => r.usuario_Id);
 
 
+
         ///////////////////////////////////////////////////////////////////////////////
-        // Configurar la relación entre ReporteEntity y NoConformidadEntity
+        // Configurar la relación entre ResponsableEntity y NoConformidadEntity
         modelBuilder.Entity<ResponsableEntity>()
             .HasOne(r => r.noConformidad)
             .WithMany()
             .HasForeignKey(r => r.noConformidad_Id);
 
+        modelBuilder.Entity<ResponsableEntity>()
+            .HasOne(r => r.usuario)
+            .WithMany()
+            .HasForeignKey(r => r.usuario_Id);
+
 
         ///////////////////////////////////////////////////////////////////////////////
-        // Configurar la relación entre RevisionAccionesCorrectivasEntity y AccionCorrectivaEntity
-        modelBuilder.Entity<RevisionAccionesCorrectivasEntity>()
+        // Configurar la relación entre R_AccionesCorrectivasEntity y AccionCorrectivaEntity
+        modelBuilder.Entity<R_AccionesCorrectivas_UsuarioEntity>()
             .HasOne(r => r.accionesCorrectivas)
             .WithMany()
             .HasForeignKey(r => r.accionesCorrectivas_Id);
 
-        // Configurar la relación entre RevisionAccionesCorrectivasEntity y UsuarioEntity
-        modelBuilder.Entity<RevisionAccionesCorrectivasEntity>()
+        // Configurar la relación entre R_AccionesCorrectivasEntity y UsuarioEntity
+        modelBuilder.Entity<R_AccionesCorrectivas_UsuarioEntity>()
             .HasOne(r => r.usuario)
             .WithMany()
             .HasForeignKey(r => r.usuario_Id);

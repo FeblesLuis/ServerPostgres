@@ -11,9 +11,6 @@ namespace ApiMS.Core.Entities
         public string? nombre { get; set; }         //Nombre del departamento
         public string? cargo { get; set; }          //Cargo en el departamento
 
-        //Relacion FK 
-            //1..1 Usuarios
-            public Guid usuario_Id { get; set; }
-            public UsuarioEntity usuario { get; set; } = null!;
+        public ICollection<UsuarioEntity>? usuarios;
     }
 }

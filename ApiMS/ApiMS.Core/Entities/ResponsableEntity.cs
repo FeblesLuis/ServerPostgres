@@ -18,6 +18,10 @@ namespace ApiMS.Core.Entities
             public ICollection<AccionCorrectivaEntity> accionesCorrectivas = null!;
 
         //Relacion FK 
+        //1..* No Conformidad
+            public Guid usuario_Id { get; set; }
+            public UsuarioEntity usuario { get; set; } = null!;
+
             //1..* No Conformidad
             public Guid noConformidad_Id { get; set; }
             public NoConformidadEntity noConformidad { get; set; } = null!;

@@ -2,6 +2,7 @@
 using ApiMS.Application.Mappers.Departamento;
 using ApiMS.Application.Mappers.Usuario;
 using ApiMS.Application.Requests.Departamento;
+using ApiMS.Application.Responses.Departamento;
 using ApiMS.Application.Responses.Usuarios;
 using ApiMS.Infrastructure.Database;
 using MediatR;
@@ -90,27 +91,27 @@ namespace ApiMS.Application.Handlers.Commands.Usuarios
                         request._request.segundo_apellido.Substring(0, 1);  // Primera letra del Apellido
                 }
 
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                ///     Valido que el departmento exista
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                var departamento = _dbContext.Departamento.Where(d => d.nombre == request._request.nombreDepartamento && d.cargo == request._request.cargoDepartamento)// Filtra por el nombre del usuario
+                    .Select(d => new DepartamentoResponse // Rellena el response
+                    {
+                        id = d.Id,
+                    }).FirstOrDefault();
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 ///     Mappeo la entidad para la insercion y le paso los campos / Luego Inserto en la bd
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 if (request._request.nombreDepartamento.Contains("Calidad")) 
                 {
+                   
                     // Crear una instancia de CalidadEntity con los datos del request
-                    var entity = UsuarioMapper.MapRequestCalidadEntity(request._request);
-
-                    // Lleno una instancia para mapear el departamento y agregarlo
-                    var request_departamento = new AgregarDepartamentoRequest();
-                    request_departamento.nombre = request._request.nombreDepartamento;
-                    request_departamento.cargo = request._request.cargoDepartamento;
-
-                    var departamento = DepartamentoMapper.MapRequestDepartamentoEntity(request_departamento, entity);
+                    var entity = UsuarioMapper.MapRequestCalidadEntity(request._request, (Guid)departamento.id);
 
                     // Agregar el usuario al DbContext
                     _dbContext.Calidad.Add(entity);
-                    await _dbContext.SaveEfContextChanges("APP");
-                    // Agregar el Departamento al DbContext
-                    _dbContext.Departamento.Add(departamento);
                     await _dbContext.SaveEfContextChanges("APP");
 
                     //Doy commit
@@ -121,21 +122,11 @@ namespace ApiMS.Application.Handlers.Commands.Usuarios
                 }
                 else
                 {
+
                     // Crear una instancia de OperarioEntity con los datos del request
-                    var entity = UsuarioMapper.MapRequestOperarioEntity(request._request);
+                    var entity = UsuarioMapper.MapRequestOperarioEntity(request._request, (Guid)departamento.id);
 
-                    // Lleno una instancia para mapear el departamento y agregarlo
-                    var request_departamento = new AgregarDepartamentoRequest();
-                    request_departamento.nombre = request._request.nombreDepartamento;
-                    request_departamento.cargo = request._request.cargoDepartamento;
-
-                    var departamento = DepartamentoMapper.MapRequestDepartamentoEntity(request_departamento, entity);
-
-                    // Agregar el usuario al DbContext
                     _dbContext.Operario.Add(entity);
-                    await _dbContext.SaveEfContextChanges("APP");
-                    // Agregar el Departamento al DbContext
-                    _dbContext.Departamento.Add(departamento);
                     await _dbContext.SaveEfContextChanges("APP");
 
                     //Doy commit

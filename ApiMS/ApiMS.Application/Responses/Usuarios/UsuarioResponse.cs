@@ -1,4 +1,6 @@
-﻿namespace ApiMS.Application.Responses.Usuarios
+﻿using ApiMS.Application.Responses.Departamento;
+
+namespace ApiMS.Application.Responses.Usuarios
 {
     public class UsuarioResponse
     {
@@ -7,8 +9,6 @@
         public string? CreatedBy { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public string? UpdatedBy { get; set; }
-
-
 
         public string? usuario { get; set; }
         public string? nombre { get; set; }
@@ -22,7 +22,7 @@
         public bool? estado { set; get; }
         public string? discriminator { set; get; }
         // Nueva propiedad para almacenar información del departamento
-        public BuscarDepartamentoResponse? departamento { get; set; }
+        public DepartamentoResponse? departamento { get; set; }
     }
 
 }

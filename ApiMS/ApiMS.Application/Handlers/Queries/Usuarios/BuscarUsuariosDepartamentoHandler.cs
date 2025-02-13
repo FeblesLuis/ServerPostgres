@@ -1,9 +1,11 @@
 ﻿using ApiMS.Application.Queries.Usuarios;
+using ApiMS.Application.Responses.Departamento;
 using ApiMS.Application.Responses.Usuarios;
 using ApiMS.Infrastructure.Database;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 
 
 namespace ApiMS.Application.Handlers.Queries.Usuarios
@@ -47,40 +49,43 @@ namespace ApiMS.Application.Handlers.Queries.Usuarios
             {
                 // Obtener el departamento y su usuario asociado
                 var departamentoConUsuario = _dbContext.Departamento
-                                                        .Where(d => d.nombre == request._request.data) // Filtra por el nombre del departamento
-                                                        .Select(d =>  new UsuarioResponse // Proyecta el usuario asociado
-                                                            {
-                                                                id = d.usuario.Id,
-                                                                CreatedAt = d.usuario.CreatedAt,
-                                                                CreatedBy = d.usuario.CreatedBy,
-                                                                UpdatedAt = d.usuario.UpdatedAt,
-                                                                UpdatedBy = d.usuario.UpdatedBy,
+                                        .Where(d => d.nombre.ToLower().Contains(request._request.data.ToLower())) // Filtra por el nombre del departamento en minúsculas
+                                        .Join(_dbContext.Usuario, // Une con la tabla Usuario
+                                                departamento => departamento.Id, // Clave primaria en Departamento
+                                                usuario => usuario.departamento_Id, // Clave foránea en Usuario
+                                                (departamento, usuario) => new UsuarioResponse // Rellena el response
+                                                {
+                                                    id = usuario.Id,
+                                                    CreatedAt = usuario.CreatedAt,
+                                                    CreatedBy = usuario.CreatedBy,
+                                                    UpdatedAt = usuario.UpdatedAt,
+                                                    UpdatedBy = usuario.UpdatedBy,
 
-                                                                usuario = d.usuario.usuario,
-                                                                nombre = d.usuario.nombre,
-                                                                apellido = d.usuario.apellido,
-                                                                password = d.usuario.password,
-                                                                correo = d.usuario.correo,
-                                                                discriminator = EF.Property<string>(d.usuario, "Discriminator"),
-                                                                respuesta_de_seguridad = d.usuario.respuesta_de_seguridad,
-                                                                respuesta_de_seguridad2 = d.usuario.respuesta_de_seguridad2,
-                                                                preguntas_de_seguridad = d.usuario.preguntas_de_seguridad,
-                                                                preguntas_de_seguridad2 = d.usuario.preguntas_de_seguridad2,
-                                                                estado = d.usuario.estado,
-                                                                departamento = new BuscarDepartamentoResponse // Asigna el departamento correspondiente
-                                                                {
-                                                                    id = d.Id,
-                                                                    CreatedAt = d.CreatedAt,
-                                                                    CreatedBy = d.CreatedBy,
-                                                                    UpdatedAt = d.UpdatedAt,
-                                                                    UpdatedBy = d.UpdatedBy,
+                                                    usuario = usuario.usuario,
+                                                    nombre = usuario.nombre,
+                                                    apellido = usuario.apellido,
+                                                    password = usuario.password,
+                                                    correo = usuario.correo,
+                                                    discriminator = EF.Property<string>(usuario, "Discriminator"),
+                                                    respuesta_de_seguridad = usuario.respuesta_de_seguridad,
+                                                    respuesta_de_seguridad2 = usuario.respuesta_de_seguridad2,
+                                                    preguntas_de_seguridad = usuario.preguntas_de_seguridad,
+                                                    preguntas_de_seguridad2 = usuario.preguntas_de_seguridad2,
+                                                    estado = usuario.estado,
+                                                    departamento = new DepartamentoResponse // Asigna el departamento correspondiente
+                                                    {
+                                                        id = departamento.Id,
+                                                        CreatedAt = departamento.CreatedAt,
+                                                        CreatedBy = departamento.CreatedBy,
+                                                        UpdatedAt = departamento.UpdatedAt,
+                                                        UpdatedBy = departamento.UpdatedBy,
 
-                                                                    nombreDepartamento = d.nombre,
-                                                                    cargo = d.cargo
-                                                                }
+                                                        nombreDepartamento = departamento.nombre,
+                                                        cargo = departamento.cargo
+                                                    }
+                                                }
+                                        ).ToList(); // Obtiene la lista de usuarios asociados al departamento
 
-                                                        })
-                                                        .ToList(); // Obtiene el primer departamento que coincida (o null si no hay coincidencias)
 
 
                 if (departamentoConUsuario == null)

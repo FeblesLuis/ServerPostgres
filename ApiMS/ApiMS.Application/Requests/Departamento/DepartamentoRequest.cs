@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace ApiMS.Application.Requests.Departamento
 {
-    public class AgregarDepartamentoRequest
+    public class DepartamentoRequest
     {
         // Constructor para limpiar automáticamente las cadenas
-        public AgregarDepartamentoRequest()
+        public DepartamentoRequest()
         {
             LimpiarCadenas();
         }
-
-
 
 
         public string? nombre { get; set; }         //Nombre del departamento

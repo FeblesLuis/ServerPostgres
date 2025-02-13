@@ -4,7 +4,7 @@
     {
         public Guid? id {  get; set; }
 
-        public IdReporteResponse(Guid id) 
+        public IdReporteResponse( Guid id) 
         {
             this.id = id;
         }

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using ApiMS.Core.Entities.Relaciones;
+using System.Diagnostics.CodeAnalysis;
 
 
 namespace ApiMS.Core.Entities;
@@ -17,13 +18,19 @@ public class UsuarioEntity : BaseEntity
     public bool? estado { set; get; }
 
     // Relaciones PK
-        // 1..1 departamento
-        public DepartamentoEntity departamento = new DepartamentoEntity();
         // 1..n Reporte
         public ICollection<ReporteEntity>? reporte;
         // 1..n RevisionReporte
         public ICollection<RevisionReporteEntity>? revisionReporte;
         // 1..n RevisionAcciones 
-        public ICollection<RevisionAccionesCorrectivasEntity>? revicionAccionesCorrectivas;
+        public ICollection<ResponsableEntity>? responsable;
+        // 1..n RevisionAcciones 
+        public ICollection<R_AccionesCorrectivas_UsuarioEntity>? revicionAccionesCorrectivas;
 
+
+
+    //Relacion FK 
+        //1..n Departamento
+        public Guid departamento_Id { get; set; }
+        public DepartamentoEntity departamento { get; set; } = null!;
 }

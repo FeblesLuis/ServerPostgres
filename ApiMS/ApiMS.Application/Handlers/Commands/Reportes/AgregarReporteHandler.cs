@@ -59,35 +59,25 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
                 ///     Busco el nombre del departamento
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 var dep_usuario = _dbContext.Usuario
-                                                .Where(u => u.Id == request._request.id) // Filtra por el Id del usuario
-                                                .Select(u => new
-                                                {
-                                                    NombreDepartamento = _dbContext.Departamento
-                                                                            .Where(d => d.usuario.Id == u.Id) // Filtra el departamento del usuario
-                                                                            .Select(d => d.nombre)
-                                                                            .FirstOrDefault()
-                                                })
-                                                .FirstOrDefault(); // Obtiene el primer resultado
+                                            .Where(u => u.Id == request._request.id) // Filtra por el Id del usuario
+                                            .Select(u => new UsuarioEntity
+                                            {
+                                                 departamento = u.departamento
+                                            })
+                                            .FirstOrDefault(); // Obtiene el primer resultado
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 ///     Busco al usuario gerente de ese departamento
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                var departamentoConUsuarios = _dbContext.Departamento
-                                                            .Where(d => d.nombre == dep_usuario.NombreDepartamento && d.cargo.ToLower().Contains("gerente")) // Filtra por el nombre del departamento y si el cargo es genrente
-                                                            .SelectMany(d => _dbContext.Usuario
-                                                                                            .Where(u => u.Id == d.usuario.Id) // Filtra los usuarios en el departamento
-                                                                                            .Select(u => new UsuarioResponse // Proyecta el usuario asociado
-                                                                                            {
-                                                                                                id = u.Id,
-                                                                                                nombre = u.nombre,
-                                                                                                departamento = new BuscarDepartamentoResponse // Asigna el departamento correspondiente
-                                                                                                {
-                                                                                                    cargo = d.cargo,
-                                                                                                    nombreDepartamento = d.nombre,
-                                                                                                }
-                                                                                            }))
-                                                            .FirstOrDefault(); // Obtiene el primer resultado
+                var gerente = _dbContext.Usuario
+                                        .Where(u => u.departamento.nombre == dep_usuario.departamento.nombre && u.departamento.cargo.Contains("Gerente"))
+                                        .Select(u => new UsuarioResponse
+                                        {
+                                               id = u.Id,
+                                               nombre= u.nombre,
+                                               apellido= u.apellido,
+                                        }).FirstOrDefault();
 
                 //Agrego el reporte
 
@@ -95,11 +85,13 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
                 _dbContext.Reporte.Add(reporte);
                 await _dbContext.SaveEfContextChanges("APP");
 
-                // Agregar el Departamento al DbContext
+                // Agregar el RevisionReporte al DbContext
+
                 var revisionRequest = new RevisionReporteRequest();
-                revisionRequest.nombre = departamentoConUsuarios.nombre;
+                revisionRequest.nombre = gerente.nombre + " " + gerente.apellido;
                 revisionRequest.estado = false;
-                var revision = RevisionReporteMapper.MapRequestRevisionReporteEntity(revisionRequest, reporte, (Guid)departamentoConUsuarios.id);
+
+                var revision = RevisionReporteMapper.MapRequestRevisionReporteEntity(revisionRequest, reporte, (Guid)gerente.id);
                 _dbContext.RevisionReporte.Add(revision);
                 await _dbContext.SaveEfContextChanges("APP");
                 transaccion.Commit();

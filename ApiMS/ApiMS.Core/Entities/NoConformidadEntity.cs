@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ApiMS.Core.Entities.Relaciones;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,6 @@ namespace ApiMS.Core.Entities
         public List<string>? responsables { get; set; }          // Responsables
         public List<string>? areas_involucradas { get; set; }    // Áreas involucradas
         public int? prioridad { get; set; }                      // Prioridad
-        public string? descripcion { get; set; }                 // Descripción
         public Estado estado { get; set; }                       // Estado es un enumerado de la carpera Core>Enum
 
         //Relaciones PK
@@ -25,10 +25,10 @@ namespace ApiMS.Core.Entities
             // 1..* Reponsables
             public ICollection<ResponsableEntity> reponsable = new List<ResponsableEntity>();
 
-        //Relacion FK 
             //1..1 Usuarios
-            public Guid calidad_id { get; set; }
-            public CalidadEntity calidad { get; set; } = null!;
+            public ICollection<R_Calidad_NoConformidadEntity>? r_Calidad_NoConformidadEntity;
+
+        //Relacion FK 
 
             // 1..1 Reporte
             public Guid reporte_Id { get; set; }

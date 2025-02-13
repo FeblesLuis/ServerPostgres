@@ -6,13 +6,12 @@ namespace ApiMS.Application.Mappers.Departamento
 {
     public class DepartamentoMapper
     {
-        public static DepartamentoEntity MapRequestDepartamentoEntity(AgregarDepartamentoRequest request, UsuarioEntity usuario)
+        public static DepartamentoEntity MapRequestDepartamentoEntity(DepartamentoRequest request)
         {
             var entity = new DepartamentoEntity()
             {
                 nombre = request.nombre,
                 cargo = request.cargo,
-                usuario = usuario,
             };
             return entity;
         }

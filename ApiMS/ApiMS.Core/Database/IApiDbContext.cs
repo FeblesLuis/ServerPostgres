@@ -1,4 +1,5 @@
 ﻿using ApiMS.Core.Entities;
+using ApiMS.Core.Entities.Relaciones;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,13 +16,15 @@ namespace ApiMS.Core.Database
         public DbSet<CalidadEntity> Calidad { get; set; }
         public DbSet<CierreEntity> Cierre { get; set; }
         public DbSet<DepartamentoEntity> Departamento { get; set; }
-        public DbSet<IndicadoresEntity> Inicadores { get; set; }
+        public DbSet<IndicadoresEntity> Indicadores { get; set; }
         public DbSet<NoConformidadEntity> NoConformidad { get; set; }
         public DbSet<NotificacionEntity> Notificacion { get; set; }
         public DbSet<OperarioEntity> Operario { get; set; }
         public DbSet<ReporteEntity> Reporte { get; set; }
         public DbSet<ResponsableEntity> Responsable { get; set; }
-        public DbSet<RevisionAccionesCorrectivasEntity> RevisionAccionesCorrectivas { get; set; }
+        public DbSet<R_AccionesCorrectivas_UsuarioEntity> R_AccionesCorrectivas_Usuario { get; set; }
+        public DbSet<R_Calidad_NoConformidadEntity> R_Calidad_NoConformidad { get; set; }
+
         public DbSet<RevisionReporteEntity> RevisionReporte { get; set; }
         public DbSet<SeguimientoEntity> Seguimiento { get; set; }
         public DbSet<UsuarioEntity> Usuario { get; set; }

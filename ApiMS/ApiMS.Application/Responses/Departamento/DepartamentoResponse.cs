@@ -1,6 +1,8 @@
-﻿namespace ApiMS.Application.Responses.Usuarios
+﻿using ApiMS.Application.Responses.Usuarios;
+
+namespace ApiMS.Application.Responses.Departamento
 {
-    public class BuscarDepartamentoResponse
+    public class DepartamentoResponse
     {
         public Guid? id { get; set; }
         public DateTime? CreatedAt { get; set; }
@@ -13,5 +15,6 @@
         public string? nombreDepartamento { get; set; }
         public string? cargo { get; set; }
 
+        public UsuarioResponse? usuario { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ApiMS.Core.Entities.Relaciones;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,8 @@ namespace ApiMS.Core.Entities
         public bool? estado { get; set; }                           // Estado
 
         //Relaciones PK
-            //1..n RevisionAccionesCorrectivas
-            public ICollection<RevisionAccionesCorrectivasEntity> revisionAccionesCorrectivas { set; get; } = null!;
+        //1..n RevisionAccionesCorrectivas
+            public ICollection<R_AccionesCorrectivas_UsuarioEntity>? revisionAccionesCorrectivas;
         //Relaciones FK
             // 1..* Responsable
             public Guid responsable_Id { get; set; }

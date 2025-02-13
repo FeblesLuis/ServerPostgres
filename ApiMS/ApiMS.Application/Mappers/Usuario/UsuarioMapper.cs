@@ -7,7 +7,7 @@ namespace ApiMS.Application.Mappers.Usuario
     public class UsuarioMapper
     {
 
-        public static OperarioEntity MapRequestOperarioEntity(UsuarioRequest request)
+        public static OperarioEntity MapRequestOperarioEntity(UsuarioRequest request, Guid id)
         {
             var entity = new OperarioEntity()
             {
@@ -21,10 +21,11 @@ namespace ApiMS.Application.Mappers.Usuario
                 respuesta_de_seguridad = request.respuesta_de_seguridad,
                 respuesta_de_seguridad2 = request.respuesta_de_seguridad2,
                 estado = request.estado,
+                departamento_Id = id
             };
             return entity;
         }
-        public static CalidadEntity MapRequestCalidadEntity(UsuarioRequest request)
+        public static CalidadEntity MapRequestCalidadEntity(UsuarioRequest request, Guid id)
         {
             var entity = new CalidadEntity()
             {
@@ -38,6 +39,7 @@ namespace ApiMS.Application.Mappers.Usuario
                 respuesta_de_seguridad = request.respuesta_de_seguridad,
                 respuesta_de_seguridad2 = request.respuesta_de_seguridad2,
                 estado = request.estado,
+                departamento_Id = id
             };
             return entity;
         }
