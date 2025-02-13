@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.application\\handlers\\commands\\reportes\\agregarreportehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\commands\\reportes\\agregarreportehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.application\\handlers\\commands\\usuarios\\actualizarusuariohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\commands\\usuarios\\actualizarusuariohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.application\\handlers\\commands\\usuarios\\agregarusuariohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\commands\\usuarios\\agregarusuariohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.application\\mappers\\revisionreporte\\revisionreportemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\mappers\\revisionreporte\\revisionreportemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.application\\mappers\\reporte\\reportemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\mappers\\reporte\\reportemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 281,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AgregarUsuarioHandler.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Usuarios\\AgregarUsuarioHandler.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Commands\\Usuarios\\AgregarUsuarioHandler.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Usuarios\\AgregarUsuarioHandler.cs",
+              "RelativeToolTip": "ApiMS.Application\\Handlers\\Commands\\Usuarios\\AgregarUsuarioHandler.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAgwHQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T01:26:03.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ActualizarUsuarioHandler.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Usuarios\\ActualizarUsuarioHandler.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Commands\\Usuarios\\ActualizarUsuarioHandler.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Usuarios\\ActualizarUsuarioHandler.cs",
+              "RelativeToolTip": "ApiMS.Application\\Handlers\\Commands\\Usuarios\\ActualizarUsuarioHandler.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T01:25:43.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RevisionReporteMapper.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Mappers\\RevisionReporte\\RevisionReporteMapper.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Mappers\\RevisionReporte\\RevisionReporteMapper.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Mappers\\RevisionReporte\\RevisionReporteMapper.cs",
+              "RelativeToolTip": "ApiMS.Application\\Mappers\\RevisionReporte\\RevisionReporteMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T01:06:34.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReporteMapper.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Mappers\\Reporte\\ReporteMapper.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Mappers\\Reporte\\ReporteMapper.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Mappers\\Reporte\\ReporteMapper.cs",
+              "RelativeToolTip": "ApiMS.Application\\Mappers\\Reporte\\ReporteMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T01:03:59.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AgregarReporteHandler.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Reportes\\AgregarReporteHandler.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Commands\\Reportes\\AgregarReporteHandler.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Reportes\\AgregarReporteHandler.cs",
+              "RelativeToolTip": "ApiMS.Application\\Handlers\\Commands\\Reportes\\AgregarReporteHandler.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwCQAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T01:02:42.432Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

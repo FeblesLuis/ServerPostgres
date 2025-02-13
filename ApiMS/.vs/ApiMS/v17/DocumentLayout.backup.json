@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Infrastructure\\Migrations\\20250212171355_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ApiMS.Infrastructure\\Migrations\\20250212171355_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.application\\handlers\\commands\\reportes\\agregarreportehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\commands\\reportes\\agregarreportehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.core\\database\\iapidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|solutionrelative:apims.core\\database\\iapidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.application\\handlers\\commands\\usuarios\\actualizarusuariohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\commands\\usuarios\\actualizarusuariohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.core\\database\\idbcontexttransactionproxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|solutionrelative:apims.core\\database\\idbcontexttransactionproxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.application\\handlers\\commands\\usuarios\\agregarusuariohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\commands\\usuarios\\agregarusuariohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{515A93A6-E931-4D23-9F4D-6856B8B5CB65}|ApiMS.Infrastructure\\ApiMS.Infrastructure.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.infrastructure\\database\\apidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{515A93A6-E931-4D23-9F4D-6856B8B5CB65}|ApiMS.Infrastructure\\ApiMS.Infrastructure.csproj|solutionrelative:apims.infrastructure\\database\\apidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.application\\mappers\\revisionreporte\\revisionreportemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\mappers\\revisionreporte\\revisionreportemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\luisf\\onedrive\\documents\\github\\iteracion 3\\apims\\apims.application\\mappers\\reporte\\reportemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\mappers\\reporte\\reportemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,69 +30,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 281,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ApiDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
-              "RelativeDocumentMoniker": "ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
-              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
-              "RelativeToolTip": "ApiMS.Infrastructure\\Database\\ApiDbContext.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAA6wJwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AgregarUsuarioHandler.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Usuarios\\AgregarUsuarioHandler.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Commands\\Usuarios\\AgregarUsuarioHandler.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Usuarios\\AgregarUsuarioHandler.cs",
+              "RelativeToolTip": "ApiMS.Application\\Handlers\\Commands\\Usuarios\\AgregarUsuarioHandler.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAgwHQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T16:57:20.382Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20250212171355_Initial.cs",
-              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Infrastructure\\Migrations\\20250212171355_Initial.cs",
-              "RelativeDocumentMoniker": "ApiMS.Infrastructure\\Migrations\\20250212171355_Initial.cs",
-              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Infrastructure\\Migrations\\20250212171355_Initial.cs",
-              "RelativeToolTip": "ApiMS.Infrastructure\\Migrations\\20250212171355_Initial.cs",
-              "ViewState": "AgIAAKEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T17:13:56.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T01:26:03.885Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ActualizarUsuarioHandler.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Usuarios\\ActualizarUsuarioHandler.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Commands\\Usuarios\\ActualizarUsuarioHandler.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Usuarios\\ActualizarUsuarioHandler.cs",
+              "RelativeToolTip": "ApiMS.Application\\Handlers\\Commands\\Usuarios\\ActualizarUsuarioHandler.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T01:25:43.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RevisionReporteMapper.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Mappers\\RevisionReporte\\RevisionReporteMapper.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Mappers\\RevisionReporte\\RevisionReporteMapper.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Mappers\\RevisionReporte\\RevisionReporteMapper.cs",
+              "RelativeToolTip": "ApiMS.Application\\Mappers\\RevisionReporte\\RevisionReporteMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T01:06:34.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReporteMapper.cs",
+              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Mappers\\Reporte\\ReporteMapper.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Mappers\\Reporte\\ReporteMapper.cs",
+              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Mappers\\Reporte\\ReporteMapper.cs",
+              "RelativeToolTip": "ApiMS.Application\\Mappers\\Reporte\\ReporteMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T01:03:59.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "AgregarReporteHandler.cs",
               "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Reportes\\AgregarReporteHandler.cs",
               "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Commands\\Reportes\\AgregarReporteHandler.cs",
               "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Reportes\\AgregarReporteHandler.cs",
               "RelativeToolTip": "ApiMS.Application\\Handlers\\Commands\\Reportes\\AgregarReporteHandler.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAuwGAAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwCQAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T17:12:28.36Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IApiDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Core\\Database\\IApiDbContext.cs",
-              "RelativeDocumentMoniker": "ApiMS.Core\\Database\\IApiDbContext.cs",
-              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Core\\Database\\IApiDbContext.cs",
-              "RelativeToolTip": "ApiMS.Core\\Database\\IApiDbContext.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA3wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T17:11:37.087Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IDbContextTransactionProxy.cs",
-              "DocumentMoniker": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Core\\Database\\IDbContextTransactionProxy.cs",
-              "RelativeDocumentMoniker": "ApiMS.Core\\Database\\IDbContextTransactionProxy.cs",
-              "ToolTip": "C:\\Users\\luisf\\OneDrive\\Documents\\github\\Iteracion 3\\ApiMS\\ApiMS.Core\\Database\\IDbContextTransactionProxy.cs",
-              "RelativeToolTip": "ApiMS.Core\\Database\\IDbContextTransactionProxy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T17:11:35.691Z"
+              "WhenOpened": "2025-02-13T01:02:42.432Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -74,7 +74,7 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 var departamentoConUsuarios = _dbContext.Departamento
-                                                            .Where(d => d.nombre == dep_usuario.NombreDepartamento && d.cargo.ToLower().Contains("gerente")) // Filtra por el nombre del departamento
+                                                            .Where(d => d.nombre == dep_usuario.NombreDepartamento && d.cargo.ToLower().Contains("gerente")) // Filtra por el nombre del departamento y si el cargo es genrente
                                                             .SelectMany(d => _dbContext.Usuario
                                                                                             .Where(u => u.Id == d.usuario.Id) // Filtra los usuarios en el departamento
                                                                                             .Select(u => new UsuarioResponse // Proyecta el usuario asociado
@@ -87,13 +87,11 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
                                                                                                     nombreDepartamento = d.nombre,
                                                                                                 }
                                                                                             }))
-                                                            .FirstOrDefault(); // Genera la consulta en una lista
+                                                            .FirstOrDefault(); // Obtiene el primer resultado
 
-
-                var usuario = new UsuarioEntity { Id = (Guid)departamentoConUsuarios.id };
                 //Agrego el reporte
 
-                var reporte = ReporteMapper.MapRequestReporteEntity(request._request, usuario);
+                var reporte = ReporteMapper.MapRequestReporteEntity(request._request, (Guid)request._request.id);
                 _dbContext.Reporte.Add(reporte);
                 await _dbContext.SaveEfContextChanges("APP");
 
@@ -101,26 +99,18 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
                 var revisionRequest = new RevisionReporteRequest();
                 revisionRequest.nombre = departamentoConUsuarios.nombre;
                 revisionRequest.estado = false;
-                var revision = RevisionReporteMapper.MapRequestRevisionReporteEntity(revisionRequest, usuario, reporte);
-
-
+                var revision = RevisionReporteMapper.MapRequestRevisionReporteEntity(revisionRequest, reporte, (Guid)departamentoConUsuarios.id);
                 _dbContext.RevisionReporte.Add(revision);
                 await _dbContext.SaveEfContextChanges("APP");
-
-
+                transaccion.Commit();
 
                 return new IdReporteResponse(reporte.Id);
-
-
-
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error AgregarOperarioHandler.HandleAsync. {Mensaje}", ex.Message);
                 throw;
             }
-
-
 
         }
 

@@ -11,7 +11,7 @@ namespace ApiMS.Application.Mappers.Reporte
 {
     public class ReporteMapper
     {
-        public static ReporteEntity MapRequestReporteEntity(ReporteRequest request)
+        public static ReporteEntity MapRequestReporteEntity(ReporteRequest request, Guid id)
         {
             var entity = new ReporteEntity()
             {
@@ -19,6 +19,7 @@ namespace ApiMS.Application.Mappers.Reporte
                 area = request.area,
                 titulo = request.titulo,
                 descripcion = request.descripcion,
+                usuario_Id = id
             };
             return entity;
         }
