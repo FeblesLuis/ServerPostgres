@@ -1,4 +1,6 @@
-﻿namespace ApiMS.Core.Entities.Relaciones
+﻿using ApiMS.Core.Entities.Child.Usuario;
+
+namespace ApiMS.Core.Entities.Relaciones
 {
     public class R_Calidad_NoConformidadEntity :BaseEntity
     {

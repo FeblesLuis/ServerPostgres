@@ -1,23 +1,19 @@
 ﻿using ApiMS.Application.Commands.Reportes;
+using ApiMS.Application.Mappers.Notificacion;
 using ApiMS.Application.Mappers.Reporte;
 using ApiMS.Application.Mappers.RevisionReporte;
+using ApiMS.Application.Requests.Notificacion;
 using ApiMS.Application.Requests.RevisionReporte;
 using ApiMS.Application.Responses.Reportes;
 using ApiMS.Application.Responses.Usuarios;
 using ApiMS.Core.Entities;
 using ApiMS.Infrastructure.Database;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ApiMS.Application.Handlers.Commands.Reportes
 {
-    public class AgregarReporteHandler : IRequestHandler<AgregarReporteCommand, IdReporteResponse>
+    public class AgregarReporteHandler : IRequestHandler<AgregarReporteCommand, IdResponsableResponse>
     {
         private readonly ApiDbContext _dbContext;
         private readonly ILogger<AgregarReporteHandler> _logger;
@@ -28,7 +24,7 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
         }
 
 
-        public Task<IdReporteResponse> Handle(AgregarReporteCommand request, CancellationToken cancellationToken)
+        public Task<IdResponsableResponse> Handle(AgregarReporteCommand request, CancellationToken cancellationToken)
         {
             try
             {
@@ -50,7 +46,7 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
             }
         }
 
-        private async Task<IdReporteResponse> HandleAsync(AgregarReporteCommand request)
+        private async Task<IdResponsableResponse> HandleAsync(AgregarReporteCommand request)
         {
             var transaccion = _dbContext.BeginTransaction();
             try
@@ -62,6 +58,8 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
                                             .Where(u => u.Id == request._request.id) // Filtra por el Id del usuario
                                             .Select(u => new UsuarioEntity
                                             {
+                                                nombre = u.nombre,
+                                                apellido = u.apellido,
                                                  departamento = u.departamento
                                             })
                                             .FirstOrDefault(); // Obtiene el primer resultado
@@ -75,6 +73,7 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
                                         .Select(u => new UsuarioResponse
                                         {
                                                id = u.Id,
+                                               correo= u.correo,
                                                nombre= u.nombre,
                                                apellido= u.apellido,
                                         }).FirstOrDefault();
@@ -94,9 +93,18 @@ namespace ApiMS.Application.Handlers.Commands.Reportes
                 var revision = RevisionReporteMapper.MapRequestRevisionReporteEntity(revisionRequest, reporte, (Guid)gerente.id);
                 _dbContext.RevisionReporte.Add(revision);
                 await _dbContext.SaveEfContextChanges("APP");
+
+                //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                /////     Genero la notificacion
+                //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                var notificacio = NotificacionMapper.MapRequestNotificacionEntity(new NotificacionRequest(request._request.titulo, dep_usuario.nombre + " " + dep_usuario.apellido, gerente.correo, "Se ha generado una nuevo reporte en el area " + request._request.area, false));
+                _dbContext.Notificacion.Add(notificacio);
+                await _dbContext.SaveEfContextChanges("APP");
                 transaccion.Commit();
 
-                return new IdReporteResponse(reporte.Id);
+
+                return new IdResponsableResponse(reporte.Id);
             }
             catch (Exception ex)
             {

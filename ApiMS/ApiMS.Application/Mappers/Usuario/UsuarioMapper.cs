@@ -1,5 +1,5 @@
 ﻿using ApiMS.Application.Requests.Usuarios;
-using ApiMS.Core.Entities;
+using ApiMS.Core.Entities.Child.Usuario;
 
 
 namespace ApiMS.Application.Mappers.Usuario

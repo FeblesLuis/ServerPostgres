@@ -15,7 +15,7 @@ namespace ApiMS.Core.Entities
        
         //Relaciones PK
             //Acciones Correctivas
-            public ICollection<AccionCorrectivaEntity> accionesCorrectivas = null!;
+            public ICollection<AccionesEntity> acciones = null!;
 
         //Relacion FK 
         //1..* No Conformidad

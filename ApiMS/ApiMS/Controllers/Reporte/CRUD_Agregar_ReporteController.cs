@@ -30,7 +30,7 @@ namespace ApiMS.Controllers.Reporte
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-        public async Task<ActionResult<IdReporteResponse>> AgregarReporte([FromBody] ReporteRequest request)
+        public async Task<ActionResult<IdResponsableResponse>> AgregarReporte([FromBody] ReporteRequest request)
         {
             _logger.LogInformation("Entrando al método que registra los valores de prueba");
             try

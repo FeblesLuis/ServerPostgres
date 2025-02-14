@@ -1,10 +1,10 @@
 ﻿namespace ApiMS.Application.Responses.Reportes
 {
-    public class IdReporteResponse
+    public class IdResponsableResponse
     {
         public Guid? id {  get; set; }
 
-        public IdReporteResponse( Guid id) 
+        public IdResponsableResponse( Guid id) 
         {
             this.id = id;
         }

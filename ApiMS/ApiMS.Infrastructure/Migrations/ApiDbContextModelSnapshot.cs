@@ -23,7 +23,7 @@ namespace ApiMS.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ApiMS.Core.Entities.AccionCorrectivaEntity", b =>
+            modelBuilder.Entity("ApiMS.Core.Entities.AccionesEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -35,29 +35,41 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(21)
+                        .HasColumnType("character varying(21)");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("text");
 
-                    b.PrimitiveCollection<List<string>>("acciones_correctivas")
-                        .HasColumnType("text[]");
-
-                    b.PrimitiveCollection<List<string>>("acciones_preventivas")
-                        .HasColumnType("text[]");
+                    b.Property<string>("area")
+                        .HasColumnType("text");
 
                     b.Property<bool?>("estado")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("investigacion")
+                        .HasColumnType("text");
+
                     b.Property<Guid>("responsable_Id")
                         .HasColumnType("uuid");
+
+                    b.Property<bool?>("visto_bueno")
+                        .HasColumnType("boolean");
 
                     b.HasKey("Id");
 
                     b.HasIndex("responsable_Id");
 
-                    b.ToTable("AccionesCorrectivas");
+                    b.ToTable("Acciones");
+
+                    b.HasDiscriminator().HasValue("AccionesEntity");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.CierreEntity", b =>
@@ -250,7 +262,7 @@ namespace ApiMS.Infrastructure.Migrations
                     b.ToTable("Notificacion");
                 });
 
-            modelBuilder.Entity("ApiMS.Core.Entities.Relaciones.R_AccionesCorrectivas_UsuarioEntity", b =>
+            modelBuilder.Entity("ApiMS.Core.Entities.Relaciones.R_Acciones_UsuarioEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -280,7 +292,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasIndex("usuario_Id");
 
-                    b.ToTable("R_AccionesCorrectivas_UsuarioEntity");
+                    b.ToTable("R_AccionesCorrectivas_Usuario");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.Relaciones.R_Calidad_NoConformidadEntity", b =>
@@ -313,7 +325,7 @@ namespace ApiMS.Infrastructure.Migrations
 
                     b.HasIndex("noConformidad_Id");
 
-                    b.ToTable("R_Calidad_NoConformidadEntity");
+                    b.ToTable("R_Calidad_NoConformidad");
                 });
 
             modelBuilder.Entity("ApiMS.Core.Entities.ReporteEntity", b =>
@@ -584,28 +596,47 @@ namespace ApiMS.Infrastructure.Migrations
                     b.ToTable("VerificacionEfectividad");
                 });
 
-            modelBuilder.Entity("ApiMS.Core.Entities.AdministradorEntity", b =>
+            modelBuilder.Entity("ApiMS.Core.Entities.Child.Acciones.CorrectivasEntity", b =>
+                {
+                    b.HasBaseType("ApiMS.Core.Entities.AccionesEntity");
+
+                    b.HasDiscriminator().HasValue("CorrectivasEntity");
+                });
+
+            modelBuilder.Entity("ApiMS.Core.Entities.Child.Acciones.PreventivasEntity", b =>
+                {
+                    b.HasBaseType("ApiMS.Core.Entities.AccionesEntity");
+
+                    b.Property<Guid>("correctiva_Id")
+                        .HasColumnType("uuid");
+
+                    b.HasIndex("correctiva_Id");
+
+                    b.HasDiscriminator().HasValue("PreventivasEntity");
+                });
+
+            modelBuilder.Entity("ApiMS.Core.Entities.Child.Usuario.AdministradorEntity", b =>
                 {
                     b.HasBaseType("ApiMS.Core.Entities.UsuarioEntity");
 
                     b.HasDiscriminator().HasValue("AdministradorEntity");
                 });
 
-            modelBuilder.Entity("ApiMS.Core.Entities.CalidadEntity", b =>
+            modelBuilder.Entity("ApiMS.Core.Entities.Child.Usuario.CalidadEntity", b =>
                 {
                     b.HasBaseType("ApiMS.Core.Entities.UsuarioEntity");
 
                     b.HasDiscriminator().HasValue("CalidadEntity");
                 });
 
-            modelBuilder.Entity("ApiMS.Core.Entities.OperarioEntity", b =>
+            modelBuilder.Entity("ApiMS.Core.Entities.Child.Usuario.OperarioEntity", b =>
                 {
                     b.HasBaseType("ApiMS.Core.Entities.UsuarioEntity");
 
                     b.HasDiscriminator().HasValue("OperarioEntity");
                 });
 
-            modelBuilder.Entity("ApiMS.Core.Entities.AccionCorrectivaEntity", b =>
+            modelBuilder.Entity("ApiMS.Core.Entities.AccionesEntity", b =>
                 {
                     b.HasOne("ApiMS.Core.Entities.ResponsableEntity", "responsable")
                         .WithMany()
@@ -649,9 +680,9 @@ namespace ApiMS.Infrastructure.Migrations
                     b.Navigation("reporte");
                 });
 
-            modelBuilder.Entity("ApiMS.Core.Entities.Relaciones.R_AccionesCorrectivas_UsuarioEntity", b =>
+            modelBuilder.Entity("ApiMS.Core.Entities.Relaciones.R_Acciones_UsuarioEntity", b =>
                 {
-                    b.HasOne("ApiMS.Core.Entities.AccionCorrectivaEntity", "accionesCorrectivas")
+                    b.HasOne("ApiMS.Core.Entities.AccionesEntity", "accionesCorrectivas")
                         .WithMany()
                         .HasForeignKey("accionesCorrectivas_Id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -670,7 +701,7 @@ namespace ApiMS.Infrastructure.Migrations
 
             modelBuilder.Entity("ApiMS.Core.Entities.Relaciones.R_Calidad_NoConformidadEntity", b =>
                 {
-                    b.HasOne("ApiMS.Core.Entities.CalidadEntity", "calidad")
+                    b.HasOne("ApiMS.Core.Entities.Child.Usuario.CalidadEntity", "calidad")
                         .WithMany()
                         .HasForeignKey("calidad_Id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -767,6 +798,17 @@ namespace ApiMS.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("cierre");
+                });
+
+            modelBuilder.Entity("ApiMS.Core.Entities.Child.Acciones.PreventivasEntity", b =>
+                {
+                    b.HasOne("ApiMS.Core.Entities.Child.Acciones.CorrectivasEntity", "correctiva")
+                        .WithMany()
+                        .HasForeignKey("correctiva_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("correctiva");
                 });
 #pragma warning restore 612, 618
         }

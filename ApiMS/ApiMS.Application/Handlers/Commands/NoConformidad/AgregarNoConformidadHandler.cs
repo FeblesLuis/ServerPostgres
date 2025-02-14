@@ -1,16 +1,12 @@
 ﻿using ApiMS.Application.Commands.NoConformidad;
 using ApiMS.Application.Mappers.NoConformidad;
+using ApiMS.Application.Mappers.Notificacion;
 using ApiMS.Application.Mappers.R_Calidad_NoConformidadMapper;
-using ApiMS.Application.Mappers.Reporte;
-using ApiMS.Application.Mappers.RevisionReporte;
-using ApiMS.Application.Requests.RevisionReporte;
+using ApiMS.Application.Requests.Notificacion;
 using ApiMS.Application.Responses.NoConformidad;
-using ApiMS.Application.Responses.Reportes;
-using ApiMS.Application.Responses.Usuarios;
-using ApiMS.Core.Entities.Relaciones;
+using ApiMS.Core.Entities;
 using ApiMS.Infrastructure.Database;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace ApiMS.Application.Handlers.Commands.NoConformidad
@@ -53,6 +49,17 @@ namespace ApiMS.Application.Handlers.Commands.NoConformidad
             var transaccion = _dbContext.BeginTransaction();
             try
             {
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                ///     Reviso si el reporte ya no esta generado
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                var mismo_Reporte = _dbContext.NoConformidad.Count(n=> n.reporte_Id== request._request.reporte_Id);
+
+                if (mismo_Reporte > 0) //Verifico que el Usuario exista
+                {
+                    throw new InvalidOperationException("El reporte ya fue registrado");
+                }
+
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 ///     Obtengo los usuarios de calidad
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,26 +67,37 @@ namespace ApiMS.Application.Handlers.Commands.NoConformidad
                                                 .Select(u => new
                                                 {
                                                     id = u.Id,
+                                                    correo = u.correo,
                                                 }).ToList();
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                ///     Busco al usuario gerente de ese departamento
+                ///     Agrego la no conformidad
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 var noConformidad = NoConformidadMapper.MapRequestNoConformidadEntity(request._request, GenerarNuevaExpedicion());
                 _dbContext.NoConformidad.Add(noConformidad);
                 await _dbContext.SaveEfContextChanges("APP");
 
-                transaccion.Commit();
 
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                ///     Agrego la relacion Calidad_NoConformidad
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                var titulo = _dbContext.Reporte.Where(r=> r.Id == request._request.reporte_Id).FirstOrDefault();
 
-                //Agrego la relacion Calidad_NoConformidad
                 foreach (var calidad in calidad_usuarios)
                 {
                     _dbContext.R_Calidad_NoConformidad.Add(R_Calidad_NoConformidadMapper.MapR_Calidad_NoConformidadEntity(calidad.id, noConformidad.Id)); R_Calidad_NoConformidadMapper.MapR_Calidad_NoConformidadEntity(calidad.id, noConformidad.Id);
+                    await _dbContext.SaveEfContextChanges("APP");
+
+                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    ///     Genero la notificacion para cada usuario de Garantia de Calidad
+                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    var notificacion = NotificacionMapper.MapRequestNotificacionEntity(new NotificacionRequest(titulo.titulo, request._request.revisado_por, calidad.correo, "Se ha generado una nueva no conformidad para revisar", false));
+                    _dbContext.Notificacion.Add(notificacion);
+                    await _dbContext.SaveEfContextChanges("APP");
                 }
 
 
-
+                transaccion.Commit();
 
                 return new IdNoConformidadResponse(noConformidad.Id);
             }

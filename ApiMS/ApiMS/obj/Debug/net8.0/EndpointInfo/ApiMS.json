@@ -171,17 +171,85 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/IdReporteResponse"
+                  "$ref": "#/components/schemas/IdResponsableResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IdReporteResponse"
+                  "$ref": "#/components/schemas/IdResponsableResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IdReporteResponse"
+                  "$ref": "#/components/schemas/IdResponsableResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CRUD_Agregar_Responsable/Agregar_Responsable": {
+      "post": {
+        "tags": [
+          "CRUD_Agregar_Responsable"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResponsableRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResponsableRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResponsableRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdResponsableResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdResponsableResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdResponsableResponse"
                 }
               }
             }
@@ -741,7 +809,7 @@
         },
         "additionalProperties": false
       },
-      "IdReporteResponse": {
+      "IdResponsableResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -855,6 +923,36 @@
           "descripcion": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResponsableRequest": {
+        "type": "object",
+        "properties": {
+          "investigacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "analisis_causa": {
+            "type": "string",
+            "nullable": true
+          },
+          "correccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "analisis_riesgo": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario_Id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "noConformidad_Id": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false

@@ -3,32 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\iteraccion 4\\apims\\apims\\controllers\\noconformidades\\crud_agregar_noconformidadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|solutionrelative:apims\\controllers\\noconformidades\\crud_agregar_noconformidadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\iteraccion 4\\apims\\apims.application\\handlers\\commands\\responsable\\agregarresponsablehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\commands\\responsable\\agregarresponsablehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\iteraccion 4\\apims\\apims\\controllers\\reporte\\crud_agregar_reportecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|solutionrelative:apims\\controllers\\reporte\\crud_agregar_reportecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\iteraccion 4\\apims\\apims\\controllers\\responsable\\crud_agregar_responsablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B47DA8C-8F68-45DA-945F-7A6DEE754808}|ApiMS\\ApiMS.csproj|solutionrelative:apims\\controllers\\responsable\\crud_agregar_responsablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\iteraccion 4\\apims\\apims.application\\handlers\\commands\\noconformidad\\agregarnoconformidadhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\commands\\noconformidad\\agregarnoconformidadhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\iteraccion 4\\apims\\apims.application\\requests\\noconformidad\\noconformidadrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\requests\\noconformidad\\noconformidadrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\iteraccion 4\\apims\\apims.core\\entities\\noconformidadentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D91EEE5-69C5-458E-A5FF-1507A2994A33}|ApiMS.Core\\ApiMS.Core.csproj|solutionrelative:apims.core\\entities\\noconformidadentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\iteraccion 4\\apims\\apims.application\\handlers\\queries\\usuarios\\buscarusuarioidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\handlers\\queries\\usuarios\\buscarusuarioidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\iteraccion 4\\apims\\apims.application\\requests\\reportes\\reporterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\requests\\reportes\\reporterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|c:\\users\\lfebles\\onedrive\\documentos\\programacion\\iteraccion 4\\apims\\apims.application\\mappers\\notificacion\\notificacionmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{288C4982-7C21-42C2-BCE9-51B19BB9FD56}|ApiMS.Application\\ApiMS.Application.csproj|solutionrelative:apims.application\\mappers\\notificacion\\notificacionmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,165 +22,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AgregarNoConformidadHandler.cs",
-              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\NoConformidad\\AgregarNoConformidadHandler.cs",
-              "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Commands\\NoConformidad\\AgregarNoConformidadHandler.cs",
-              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\NoConformidad\\AgregarNoConformidadHandler.cs",
-              "RelativeToolTip": "ApiMS.Application\\Handlers\\Commands\\NoConformidad\\AgregarNoConformidadHandler.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAA9wFMAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T19:35:57.99Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CRUD_Agregar_ReporteController.cs",
-              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS\\Controllers\\Reporte\\CRUD_Agregar_ReporteController.cs",
-              "RelativeDocumentMoniker": "ApiMS\\Controllers\\Reporte\\CRUD_Agregar_ReporteController.cs",
-              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS\\Controllers\\Reporte\\CRUD_Agregar_ReporteController.cs",
-              "RelativeToolTip": "ApiMS\\Controllers\\Reporte\\CRUD_Agregar_ReporteController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
+              "Title": "CRUD_Agregar_ResponsableController.cs",
+              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS\\Controllers\\Responsable\\CRUD_Agregar_ResponsableController.cs",
+              "RelativeDocumentMoniker": "ApiMS\\Controllers\\Responsable\\CRUD_Agregar_ResponsableController.cs",
+              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS\\Controllers\\Responsable\\CRUD_Agregar_ResponsableController.cs",
+              "RelativeToolTip": "ApiMS\\Controllers\\Responsable\\CRUD_Agregar_ResponsableController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T20:23:18.676Z",
+              "WhenOpened": "2025-02-14T19:16:15.598Z",
               "EditorCaption": ""
             },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "cce261ef-fbbf-4187-b191-7d4fa00659b9",
-        "Display": 1,
-        "X": -85,
-        "Y": 148,
-        "Width": 1499,
-        "Height": 965,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ReporteRequest.cs",
-              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Application\\Requests\\Reportes\\ReporteRequest.cs",
-              "RelativeDocumentMoniker": "ApiMS.Application\\Requests\\Reportes\\ReporteRequest.cs",
-              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Application\\Requests\\Reportes\\ReporteRequest.cs",
-              "RelativeToolTip": "ApiMS.Application\\Requests\\Reportes\\ReporteRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T19:06:36.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BuscarUsuarioIdHandler.cs",
-              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Application\\Handlers\\Queries\\Usuarios\\BuscarUsuarioIdHandler.cs",
-              "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Queries\\Usuarios\\BuscarUsuarioIdHandler.cs",
-              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Application\\Handlers\\Queries\\Usuarios\\BuscarUsuarioIdHandler.cs",
-              "RelativeToolTip": "ApiMS.Application\\Handlers\\Queries\\Usuarios\\BuscarUsuarioIdHandler.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAuwEYAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T18:56:20.71Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "29b86dd9-e9be-4a85-9600-de19ce6cc012",
-        "Display": 1,
-        "X": 747,
-        "Y": 221,
-        "Width": 1066,
-        "Height": 676,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NoConformidadRequest.cs",
-              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Application\\Requests\\NoConformidad\\NoConformidadRequest.cs",
-              "RelativeDocumentMoniker": "ApiMS.Application\\Requests\\NoConformidad\\NoConformidadRequest.cs",
-              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Application\\Requests\\NoConformidad\\NoConformidadRequest.cs",
-              "RelativeToolTip": "ApiMS.Application\\Requests\\NoConformidad\\NoConformidadRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T19:38:45.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NoConformidadEntity.cs",
-              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Core\\Entities\\NoConformidadEntity.cs",
-              "RelativeDocumentMoniker": "ApiMS.Core\\Entities\\NoConformidadEntity.cs",
-              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Core\\Entities\\NoConformidadEntity.cs",
-              "RelativeToolTip": "ApiMS.Core\\Entities\\NoConformidadEntity.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T19:52:56.698Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "76b0cdb0-c84d-4d82-8e60-bedb6a3e3121",
-        "Display": 1,
-        "X": 560,
-        "Y": 243,
-        "Width": 1066,
-        "Height": 676,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CRUD_Agregar_NoConformidadController.cs",
-              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS\\Controllers\\NoConformidades\\CRUD_Agregar_NoConformidadController.cs",
-              "RelativeDocumentMoniker": "ApiMS\\Controllers\\NoConformidades\\CRUD_Agregar_NoConformidadController.cs",
-              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS\\Controllers\\NoConformidades\\CRUD_Agregar_NoConformidadController.cs",
-              "RelativeToolTip": "ApiMS\\Controllers\\NoConformidades\\CRUD_Agregar_NoConformidadController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwAYAAAAAAAAAAAAAAA==",
+              "Title": "AgregarResponsableHandler.cs",
+              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Responsable\\AgregarResponsableHandler.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Handlers\\Commands\\Responsable\\AgregarResponsableHandler.cs",
+              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Application\\Handlers\\Commands\\Responsable\\AgregarResponsableHandler.cs",
+              "RelativeToolTip": "ApiMS.Application\\Handlers\\Commands\\Responsable\\AgregarResponsableHandler.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAD4vz0AAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T20:23:16.909Z",
+              "WhenOpened": "2025-02-14T19:13:31.283Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "92cd178e-3d43-4cc8-a078-ce6ddd345980",
+        "Display": 1,
+        "X": 0,
+        "Y": 157,
+        "Width": 1366,
+        "Height": 571,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NotificacionMapper.cs",
+              "DocumentMoniker": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Application\\Mappers\\Notificacion\\NotificacionMapper.cs",
+              "RelativeDocumentMoniker": "ApiMS.Application\\Mappers\\Notificacion\\NotificacionMapper.cs",
+              "ToolTip": "C:\\Users\\lfebles\\OneDrive\\Documentos\\Programacion\\iteraccion 4\\ApiMS\\ApiMS.Application\\Mappers\\Notificacion\\NotificacionMapper.cs",
+              "RelativeToolTip": "ApiMS.Application\\Mappers\\Notificacion\\NotificacionMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T16:05:18.038Z",
               "EditorCaption": ""
             }
           ]

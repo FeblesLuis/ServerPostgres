@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace ApiMS.Core.Entities
 {
-    public class AccionCorrectivaEntity : BaseEntity
+    public class AccionesEntity : BaseEntity
     {
-        public List<string>? acciones_correctivas { get; set; }     // Acciones correctivas
-        public List<string>? acciones_preventivas { get; set; }     // Acciones preventivas
-        public bool? estado { get; set; }                           // Estado
+        public string? investigacion { get; set; }     // Acciones correctivas
+        public string? area { get; set; }             // Area donde se detecto
+        public bool? estado { get; set; }             // Estado
+        public bool? visto_bueno { get; set; }        // Revisado por el gerente
 
         //Relaciones PK
         //1..n RevisionAccionesCorrectivas
-            public ICollection<R_AccionesCorrectivas_UsuarioEntity>? revisionAccionesCorrectivas;
+            public ICollection<R_Acciones_UsuarioEntity>? R_AccionesCorrectivas_Usuario;
         //Relaciones FK
             // 1..* Responsable
             public Guid responsable_Id { get; set; }

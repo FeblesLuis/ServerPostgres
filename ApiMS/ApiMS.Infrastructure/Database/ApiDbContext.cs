@@ -1,5 +1,7 @@
 ﻿using ApiMS.Core.Database;
 using ApiMS.Core.Entities;
+using ApiMS.Core.Entities.Child.Acciones;
+using ApiMS.Core.Entities.Child.Usuario;
 using ApiMS.Core.Entities.Relaciones;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,7 +17,9 @@ public class ApiDbContext : DbContext , IApiDbContext
     {
     }
 
-    public DbSet<AccionCorrectivaEntity> AccionesCorrectivas { get; set; }
+    public DbSet<AccionesEntity> Acciones { get; set; }
+    public DbSet<PreventivasEntity> Preventivas { get; set; }
+    public DbSet<CorrectivasEntity> Correctivas { get; set; }
     public DbSet<AdministradorEntity> Administrador { get; set; }
     public DbSet<CalidadEntity> Calidad { get; set; }
     public DbSet<CierreEntity> Cierre { get; set; }
@@ -26,7 +30,7 @@ public class ApiDbContext : DbContext , IApiDbContext
     public DbSet<OperarioEntity> Operario { get; set; }
     public DbSet<ReporteEntity> Reporte { get; set; }
     public DbSet<ResponsableEntity> Responsable { get;set; }
-    public DbSet<R_AccionesCorrectivas_UsuarioEntity> R_AccionesCorrectivas_Usuario { get; set; }
+    public DbSet<R_Acciones_UsuarioEntity> R_Acciones_Usuario { get; set; }
     public DbSet<R_Calidad_NoConformidadEntity> R_Calidad_NoConformidad { get; set; }
 
     public DbSet<RevisionReporteEntity> RevisionReporte { get; set; }
@@ -52,11 +56,18 @@ public class ApiDbContext : DbContext , IApiDbContext
     {
         base.OnModelCreating(modelBuilder);
         ///////////////////////////////////////////////////////////////////////////////
-        // Configurar la relación entre AccionCorrectivaEntity y ResponsableEntity
-        modelBuilder.Entity<AccionCorrectivaEntity>()
+        // Configurar la relación entre AccionEntity y ResponsableEntity
+        modelBuilder.Entity<AccionesEntity>()
             .HasOne(r => r.responsable)
             .WithMany()
             .HasForeignKey(r => r.responsable_Id);
+
+        ///////////////////////////////////////////////////////////////////////////////
+        // Configurar la relación entre PreventivasEntity y CorrectivasEntity
+        modelBuilder.Entity<PreventivasEntity>()
+            .HasOne(r => r.correctiva)
+            .WithMany()
+            .HasForeignKey(r => r.correctiva_Id);
 
 
         ///////////////////////////////////////////////////////////////////////////////
@@ -129,13 +140,13 @@ public class ApiDbContext : DbContext , IApiDbContext
 
         ///////////////////////////////////////////////////////////////////////////////
         // Configurar la relación entre R_AccionesCorrectivasEntity y AccionCorrectivaEntity
-        modelBuilder.Entity<R_AccionesCorrectivas_UsuarioEntity>()
+        modelBuilder.Entity<R_Acciones_UsuarioEntity>()
             .HasOne(r => r.accionesCorrectivas)
             .WithMany()
             .HasForeignKey(r => r.accionesCorrectivas_Id);
 
         // Configurar la relación entre R_AccionesCorrectivasEntity y UsuarioEntity
-        modelBuilder.Entity<R_AccionesCorrectivas_UsuarioEntity>()
+        modelBuilder.Entity<R_Acciones_UsuarioEntity>()
             .HasOne(r => r.usuario)
             .WithMany()
             .HasForeignKey(r => r.usuario_Id);

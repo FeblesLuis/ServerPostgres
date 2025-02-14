@@ -1,4 +1,6 @@
 ﻿using ApiMS.Core.Entities;
+using ApiMS.Core.Entities.Child.Acciones;
+using ApiMS.Core.Entities.Child.Usuario;
 using ApiMS.Core.Entities.Relaciones;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,7 +13,9 @@ namespace ApiMS.Core.Database
 {
     public interface IApiDbContext
     {
-        public DbSet<AccionCorrectivaEntity> AccionesCorrectivas { get; set; }
+        public DbSet<AccionesEntity> Acciones { get; set; }
+        public DbSet<PreventivasEntity> Preventivas { get; set; }
+        public DbSet<CorrectivasEntity> Correctivas { get; set; }
         public DbSet<AdministradorEntity> Administrador { get; set; }
         public DbSet<CalidadEntity> Calidad { get; set; }
         public DbSet<CierreEntity> Cierre { get; set; }
@@ -22,7 +26,7 @@ namespace ApiMS.Core.Database
         public DbSet<OperarioEntity> Operario { get; set; }
         public DbSet<ReporteEntity> Reporte { get; set; }
         public DbSet<ResponsableEntity> Responsable { get; set; }
-        public DbSet<R_AccionesCorrectivas_UsuarioEntity> R_AccionesCorrectivas_Usuario { get; set; }
+        public DbSet<R_Acciones_UsuarioEntity> R_Acciones_Usuario { get; set; }
         public DbSet<R_Calidad_NoConformidadEntity> R_Calidad_NoConformidad { get; set; }
 
         public DbSet<RevisionReporteEntity> RevisionReporte { get; set; }

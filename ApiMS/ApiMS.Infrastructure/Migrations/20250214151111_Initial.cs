@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ApiMS.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -195,7 +195,7 @@ namespace ApiMS.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "R_Calidad_NoConformidadEntity",
+                name: "R_Calidad_NoConformidad",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -208,15 +208,15 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_R_Calidad_NoConformidadEntity", x => x.Id);
+                    table.PrimaryKey("PK_R_Calidad_NoConformidad", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_R_Calidad_NoConformidadEntity_NoConformidad_noConformidad_Id",
+                        name: "FK_R_Calidad_NoConformidad_NoConformidad_noConformidad_Id",
                         column: x => x.noConformidad_Id,
                         principalTable: "NoConformidad",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_R_Calidad_NoConformidadEntity_Usuario_calidad_Id",
+                        name: "FK_R_Calidad_NoConformidad_Usuario_calidad_Id",
                         column: x => x.calidad_Id,
                         principalTable: "Usuario",
                         principalColumn: "Id",
@@ -332,14 +332,17 @@ namespace ApiMS.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AccionesCorrectivas",
+                name: "Acciones",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    acciones_correctivas = table.Column<List<string>>(type: "text[]", nullable: true),
-                    acciones_preventivas = table.Column<List<string>>(type: "text[]", nullable: true),
+                    investigacion = table.Column<string>(type: "text", nullable: true),
+                    area = table.Column<string>(type: "text", nullable: true),
                     estado = table.Column<bool>(type: "boolean", nullable: true),
+                    visto_bueno = table.Column<bool>(type: "boolean", nullable: true),
                     responsable_Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Discriminator = table.Column<string>(type: "character varying(21)", maxLength: 21, nullable: false),
+                    correctiva_Id = table.Column<Guid>(type: "uuid", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -347,9 +350,15 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AccionesCorrectivas", x => x.Id);
+                    table.PrimaryKey("PK_Acciones", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AccionesCorrectivas_Responsable_responsable_Id",
+                        name: "FK_Acciones_Acciones_correctiva_Id",
+                        column: x => x.correctiva_Id,
+                        principalTable: "Acciones",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Acciones_Responsable_responsable_Id",
                         column: x => x.responsable_Id,
                         principalTable: "Responsable",
                         principalColumn: "Id",
@@ -357,7 +366,7 @@ namespace ApiMS.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "R_AccionesCorrectivas_UsuarioEntity",
+                name: "R_AccionesCorrectivas_Usuario",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -370,15 +379,15 @@ namespace ApiMS.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_R_AccionesCorrectivas_UsuarioEntity", x => x.Id);
+                    table.PrimaryKey("PK_R_AccionesCorrectivas_Usuario", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_R_AccionesCorrectivas_UsuarioEntity_AccionesCorrectivas_acc~",
+                        name: "FK_R_AccionesCorrectivas_Usuario_Acciones_accionesCorrectivas_~",
                         column: x => x.accionesCorrectivas_Id,
-                        principalTable: "AccionesCorrectivas",
+                        principalTable: "Acciones",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_R_AccionesCorrectivas_UsuarioEntity_Usuario_usuario_Id",
+                        name: "FK_R_AccionesCorrectivas_Usuario_Usuario_usuario_Id",
                         column: x => x.usuario_Id,
                         principalTable: "Usuario",
                         principalColumn: "Id",
@@ -386,8 +395,13 @@ namespace ApiMS.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AccionesCorrectivas_responsable_Id",
-                table: "AccionesCorrectivas",
+                name: "IX_Acciones_correctiva_Id",
+                table: "Acciones",
+                column: "correctiva_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Acciones_responsable_Id",
+                table: "Acciones",
                 column: "responsable_Id");
 
             migrationBuilder.CreateIndex(
@@ -406,23 +420,23 @@ namespace ApiMS.Infrastructure.Migrations
                 column: "reporte_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_R_AccionesCorrectivas_UsuarioEntity_accionesCorrectivas_Id",
-                table: "R_AccionesCorrectivas_UsuarioEntity",
+                name: "IX_R_AccionesCorrectivas_Usuario_accionesCorrectivas_Id",
+                table: "R_AccionesCorrectivas_Usuario",
                 column: "accionesCorrectivas_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_R_AccionesCorrectivas_UsuarioEntity_usuario_Id",
-                table: "R_AccionesCorrectivas_UsuarioEntity",
+                name: "IX_R_AccionesCorrectivas_Usuario_usuario_Id",
+                table: "R_AccionesCorrectivas_Usuario",
                 column: "usuario_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_R_Calidad_NoConformidadEntity_calidad_Id",
-                table: "R_Calidad_NoConformidadEntity",
+                name: "IX_R_Calidad_NoConformidad_calidad_Id",
+                table: "R_Calidad_NoConformidad",
                 column: "calidad_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_R_Calidad_NoConformidadEntity_noConformidad_Id",
-                table: "R_Calidad_NoConformidadEntity",
+                name: "IX_R_Calidad_NoConformidad_noConformidad_Id",
+                table: "R_Calidad_NoConformidad",
                 column: "noConformidad_Id");
 
             migrationBuilder.CreateIndex(
@@ -476,10 +490,10 @@ namespace ApiMS.Infrastructure.Migrations
                 name: "Notificacion");
 
             migrationBuilder.DropTable(
-                name: "R_AccionesCorrectivas_UsuarioEntity");
+                name: "R_AccionesCorrectivas_Usuario");
 
             migrationBuilder.DropTable(
-                name: "R_Calidad_NoConformidadEntity");
+                name: "R_Calidad_NoConformidad");
 
             migrationBuilder.DropTable(
                 name: "RevisionReporte");
@@ -491,7 +505,7 @@ namespace ApiMS.Infrastructure.Migrations
                 name: "VerificacionEfectividad");
 
             migrationBuilder.DropTable(
-                name: "AccionesCorrectivas");
+                name: "Acciones");
 
             migrationBuilder.DropTable(
                 name: "Cierre");

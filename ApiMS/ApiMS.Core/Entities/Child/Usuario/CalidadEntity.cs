@@ -1,7 +1,7 @@
 ﻿using ApiMS.Core.Entities.Relaciones;
 using System.Diagnostics.CodeAnalysis;
 
-namespace ApiMS.Core.Entities;
+namespace ApiMS.Core.Entities.Child.Usuario;
 
 public class CalidadEntity : UsuarioEntity
 {

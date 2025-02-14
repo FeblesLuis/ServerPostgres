@@ -25,7 +25,7 @@ public class UsuarioEntity : BaseEntity
         // 1..n RevisionAcciones 
         public ICollection<ResponsableEntity>? responsable;
         // 1..n RevisionAcciones 
-        public ICollection<R_AccionesCorrectivas_UsuarioEntity>? revicionAccionesCorrectivas;
+        public ICollection<R_Acciones_UsuarioEntity>? revicionAccionesCorrectivas;
 
 
 

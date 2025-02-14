@@ -4,7 +4,7 @@ using MediatR;
 
 namespace ApiMS.Application.Commands.Reportes
 {
-    public class AgregarReporteCommand : IRequest<IdReporteResponse>
+    public class AgregarReporteCommand : IRequest<IdResponsableResponse>
     {
         public ReporteRequest _request { get; set; }
         public AgregarReporteCommand(ReporteRequest request)

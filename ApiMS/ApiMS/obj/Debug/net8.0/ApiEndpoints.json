@@ -85,7 +85,42 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ApiMS.Application.Responses.Reportes.IdReporteResponse",
+        "Type": "ApiMS.Application.Responses.Reportes.IdResponsableResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiMS.Controllers.Responsable.CRUD_Agregar_ResponsableController",
+    "Method": "Agregar_Responsable",
+    "RelativePath": "api/CRUD_Agregar_Responsable/Agregar_Responsable",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiMS.Application.Requests.Responsables.ResponsableRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiMS.Application.Responses.Reportes.IdResponsableResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
